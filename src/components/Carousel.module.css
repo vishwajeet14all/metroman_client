@@ -1,0 +1,12 @@
+
+
+.customActiveItem{
+    height: 400px;
+}
+.customItem{
+    height: 400px;
+}
+.customImage{
+    height: 100%;
+    object-fit: cover;
+}

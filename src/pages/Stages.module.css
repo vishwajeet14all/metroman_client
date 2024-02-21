@@ -1,0 +1,98 @@
+/* Construction Stages */
+
+.constructionStages {
+    background-color: #0d6efd;
+    padding: 60px 0px 1px;
+}
+
+.constructionStages div h2 {
+    position: relative;
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 34px;
+    text-transform: uppercase;
+}
+
+.constructionStages h2::after {
+    bottom: -22px;
+    width: 70px;
+    height: 3px;
+    background-color: #4e91f5;
+    left: 49%;
+    position: absolute;
+    content: '';
+}
+
+.constructionStages div p {
+    margin: 0 auto;
+    width: 90%;
+    font-size: 18px;
+    color: #fff;
+    margin-top: 35px;
+    margin-bottom: 50px;
+    line-height: 34px;
+    margin-bottom: 52px;
+    line-height: 34px;
+}
+
+/* Construction Stages Picture */
+.numbering {
+    box-sizing: border-box;
+    width: 220px;
+    height: 270px;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 25px;
+}
+
+.linkStage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.linkStage {
+    text-decoration: none;
+    color: inherit;
+}
+
+.constructionStagesPic {
+    padding-top: 52px;
+    padding-bottom: 52px;
+    background-color: #fbf3db;
+}
+
+.stageImageWrapper {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #0d6efd;
+    width: auto;
+    padding: 35px;
+}
+
+.stageImageWrapperBg {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #0d6efd;
+    width: auto;
+    padding: 35px;
+    background-color: #0d6efd;
+}
+
+.stageImage {
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+}
+
+.stageText {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}

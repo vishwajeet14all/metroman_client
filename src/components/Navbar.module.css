@@ -1,0 +1,71 @@
+/* Logo Navbar Top */
+.logowrapper {
+    padding: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    width: 129px;
+}
+
+@media (max-width:500px) {
+    .smallScreen {
+        display: none;
+    }
+
+}
+
+/*Top Nav List */
+.navList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+
+.navLinks {
+    color: #fff !important;
+}
+
+.navLinks:hover{    
+    background-color: #1974fc;
+}
+
+.navList li {
+    border-right: 1px solid #d6d6d6;
+    padding: 5px 15px;
+}
+
+.contactNumber {
+    text-decoration: none;
+    color: #4f4f00;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 5px 10px;
+    vertical-align: middle;
+}
+
+.watsAppImg {
+    color: #10815d;
+    text-align: center;
+    font-size: 18px;
+}
+
+.emailIcon {
+    color: #10815d;
+    vertical-align: middle;
+    font-size: 18px;
+}
+
+.email {
+    text-decoration: none;
+    color: #4f4f00;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 5px 10px;
+    display: inline-block;
+    vertical-align: middle;
+}

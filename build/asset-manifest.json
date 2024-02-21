@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0a6ba9a9.css",
+    "main.js": "/static/js/main.df6f55ff.js",
+    "static/media/NEW_LOGO.png": "/static/media/NEW_LOGO.77f21b65d8a0e012ea20.png",
+    "static/media/watsapp.jpg": "/static/media/watsapp.58ffc47380826f17886d.jpg",
+    "index.html": "/index.html",
+    "main.0a6ba9a9.css.map": "/static/css/main.0a6ba9a9.css.map",
+    "main.df6f55ff.js.map": "/static/js/main.df6f55ff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a6ba9a9.css",
+    "static/js/main.df6f55ff.js"
+  ]
+}

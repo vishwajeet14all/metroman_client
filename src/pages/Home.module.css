@@ -1,0 +1,354 @@
+/* Common classes  */
+.sectionSpacingOverall {
+    padding: 52px 0 60px;
+}
+
+.sectionAfter::after {
+    content: '';
+    /* Empty content box */
+    display: block;
+    /* Make it a block-level element */
+    width: 70px;
+    /* Set the width of the line */
+    height: 3px;
+    /* Set the height (thickness) of the line */
+    background-color: #4e91f5;
+    /* Set the color of the line */
+    margin-top: 14px;
+    /* Adjust the spacing between text and line */
+    left: 47%;
+    position: absolute;
+}
+
+.paddingTop {
+    padding-top: 20px;
+}
+
+.paddingBottom {
+    padding-bottom: 30px;
+}
+
+/* wats app icon */
+.watsapp {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+}
+
+/* Construction Stages */
+
+.constructionStages {
+    background-color: #0d6efd;
+    padding: 60px 0px 1px;
+}
+
+.constructionStages div h2 {
+    position: relative;
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 34px;
+    text-transform: uppercase;
+}
+
+.constructionStages h2::after {
+    bottom: -22px;
+    width: 70px;
+    height: 3px;
+    background-color: #4e91f5;
+    left: 49%;
+    position: absolute;
+    content: '';
+}
+
+.constructionStages div p {
+    margin: 0 auto;
+    width: 90%;
+    font-size: 18px;
+    color: #fff;
+    margin-top: 35px;
+    margin-bottom: 50px;
+    line-height: 34px;
+    margin-bottom: 52px;
+    line-height: 34px;
+}
+
+/* Construction Stages Picture */
+.numbering {
+    box-sizing: border-box;
+    width: 220px;
+    height: 270px;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 25px;
+}
+
+.linkStage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.linkStage {
+    text-decoration: none;
+    color: inherit;
+}
+
+.constructionStagesPic {
+    padding-top: 52px;
+    padding-bottom: 52px;
+    background-color: #fbf3db;
+}
+
+.stageImageWrapper {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #0d6efd;
+    width: auto;
+    padding: 35px;
+}
+
+.stageImageWrapperBg {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #0d6efd;
+    width: auto;
+    padding: 35px;
+    background-color: #0d6efd;
+}
+
+.stageImage {
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+}
+
+.stageText {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+/* Detail Section */
+
+.title {
+    padding-bottom: 30px;
+}
+
+.title::after {
+    content: '';
+    /* Empty content box */
+    display: block;
+    /* Make it a block-level element */
+    width: 70px;
+    /* Set the width of the line */
+    height: 3px;
+    /* Set the height (thickness) of the line */
+    background-color: #4e91f5;
+    /* Set the color of the line */
+    margin-top: 18px;
+    /* Adjust the spacing between text and line */
+    left: 47%;
+    position: absolute;
+}
+
+.titletext {
+    font-size: 18px;
+    line-height: 34px;
+}
+
+/* Inovation field */
+
+.innovationSection {
+    background-color: #e4e9bf;
+    padding-top: 52px;
+}
+
+.innovationImage {
+    padding-top: 20px;
+    padding-bottom: 52px;
+    display: flex;
+}
+
+.innovationImageWrapper {
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+.innovationImageWrapper:hover img {
+    transform: scale(1.5);
+}
+
+.innovationImageWrapper img {
+    transition: all 1.5s ease;
+}
+
+.innovationText {
+    margin-bottom: 38px;
+    font-size: 18px;
+    color: #444;
+    line-height: 34px;
+}
+
+.innovationLabel {
+    background-color: #0d6efd;
+    color: #fff;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+
+.chooseDescription {
+    color: #353535;
+    font-size: 18px;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 34px;
+}
+
+.extraText {
+    margin-bottom: 0px;
+}
+
+.outerBox {
+    background-color: #0d6efd;
+    border-radius: 8px;
+    padding: 15px;
+    height: 278px;
+    margin-top: 10px;
+
+}
+
+.innerBox {
+    padding: 50px 28px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.innerIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerBoxText {
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+/* Testimonial Section */
+
+.sectionBackGround {
+    background-color: #0d6efd;
+}
+
+.headingBackground {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 400;
+    line-height: 1.2;
+    padding-bottom: 30px;
+}
+
+@media (max-width:800px) {
+    .headingBackground {
+        font-size: 1.4em;
+    }
+}
+
+.imgTestimonials {
+    width: 100px;
+    background-color: #fff;
+    display: block;
+}
+
+.testiMonial {
+    background-color: #fff;
+    width: 100%;
+    padding: 25px;
+    border-radius: 25px;
+    height: auto;
+}
+
+.testimonialImgOuter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 265px;
+}
+
+/* Guidance Section */
+
+.guidanceImage {
+    width: 100%;
+}
+
+.guidanceHeading {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 34px;
+    color: #000;
+    padding: 28px;
+}
+
+.formSection {
+    overflow: hidden;
+}
+
+.formSection:hover img {
+    transform: scale(1.5);
+}
+
+.formSection img {
+    transition: all 1.5s ease;
+}
+
+.formOuter {
+    background-color: #eaeeed;
+    padding-bottom: 52px;
+}
+
+.guidanceTextRemark {    
+    color: #6c757d;
+    display: flex;
+    justify-content: flex-end;
+    margin-right:20px;    
+}
+
+.buttonContactUs {
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #939393;
+    border: 1px solid #939393;
+    outline: 0;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px 100px;
+    border-radius: 5px;
+    transition: all ease .5s;
+    display: inline-block;
+}
+
+.buttonContactUs:hover {
+    background-color: #0d6efd;
+}
+
