@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
-import Watsappimage from "../images/watsapp.jpg";
 import style from "./Home.module.css";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
-import Footer from "../components/Footer";
 import Carousel from "../components/Carousel";
+import Copywrite from "../components/Copywrite";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const form = useRef();
@@ -31,7 +31,7 @@ export default function Home() {
   };
   return (
     <div>
-      <Carousel/>
+      <Carousel />
       <Card />
       <section>
         <div className={style.constructionStages}>
@@ -293,7 +293,7 @@ export default function Home() {
       <section className={style.sectionSpacingOverall}>
         <div className="container">
           <div className={`${style.sectionAfter} ${style.paddingBottom}`}>
-            <h2 className="text-center">WHY CHOOSE NUVOCO?</h2>
+            <h2 className="text-center">WHY CHOOSE METROMAN?</h2>
           </div>
           <div className="">
             <p className={style.chooseDescription}>
@@ -531,8 +531,11 @@ export default function Home() {
         </div>
       </section>
       <Footer/>
+      <Copywrite />
       <div className={style.watsapp}>
-        <img width="50px" src={Watsappimage} alt="" />
+        <Link to="https://wa.me/918218327600">
+          <img width="50px" src="https://i.ibb.co/HHMP1j0/watsapp.jpg" alt="" />
+        </Link>
       </div>
     </div>
   );

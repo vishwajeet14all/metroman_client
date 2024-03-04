@@ -1,6 +1,61 @@
-/* footer */
-.footer {
-    color: #231f20;
-    font-size: 14px;
-    font-weight:400;
+.section {
+    background-color: #00162a;
+    padding: 45px 45px;
 }
+
+.quickLinks {
+    color: #fff;
+    font-size: 18px;
+    padding-bottom: 5px;    
+}
+
+.quickLinks + ul > li {
+    color: #fff;
+    list-style: none;
+}
+
+.getInTouch{
+    color: #fff;
+    font-size: 18px;
+    padding-bottom: 5px; 
+}
+
+.address::before{
+  content: '\f3c5'; 
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 0.5em; 
+}
+
+.getInTouch + ul > li {
+    color: #fff;
+    list-style: none;
+}
+
+.map > iframe{   
+   border-radius: 5px;
+}
+
+.outerSocialDiv{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialIconsOuter{
+    margin: 10px;
+    background-color:#aea8b9;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px;
+
+}
+
+.socialIcons{
+    width: 20px;
+    height: 20px;
+    background-color: #aea8b9;
+    color: #00203e;    
+    font-size: 20px;
+}
+

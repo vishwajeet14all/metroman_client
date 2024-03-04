@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import style from "./Personaldetail.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import axios from "axios";
 import { savePersonalDetail } from "../services/api";
+import Copywrite from "../components/Copywrite";
 // import { useParams } from "react-router-dom";
 
 const URL = process.env.REACT_APP_API_URL;
@@ -203,7 +204,7 @@ export default function Personaldetail() {
             </form>
           </div>
         </div>
-        <Footer />
+        <Copywrite />
       </div>
     </section>
   );

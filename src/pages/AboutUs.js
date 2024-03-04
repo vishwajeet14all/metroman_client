@@ -38,10 +38,9 @@ export default function AboutUs() {
               customer experience devoid of misinformation.Behind our success is
               a team of mentors and technical experts with diverse backgrounds,
               hailing from esteemed government and private construction
-              companies.Our collective expertise fuels our
-              mission to redefine standards in the construction industry, making
-              us the trusted choice for those seeking reliability, quality, and
-              innovation.
+              companies.Our collective expertise fuels our mission to redefine
+              standards in the construction industry, making us the trusted
+              choice for those seeking reliability, quality, and innovation.
             </p>
           </div>
           <div className="col">
@@ -51,6 +50,20 @@ export default function AboutUs() {
               alt=""
             />
           </div>
+        </div>
+      </section>
+      <section className="container">
+        <div className={`${style.map}`}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d674.6913461245846!2d77.1001810093421!3d28.693661610030354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d058933d5108f%3A0xcc7189618a9e93e!2sMetroman%20Casting%20Yards!5e0!3m2!1sen!2sin!4v1709288973857!5m2!1sen!2sin"
+            width="1080"
+            height="400"
+            style={{ border: 0 }}
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Metroman Casting Yards Location Map"
+          ></iframe>
         </div>
       </section>
     </>

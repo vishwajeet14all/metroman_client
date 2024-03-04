@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import logo from "../images/NEW_LOGO.png";
 import style from "./Navbar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
@@ -34,49 +33,88 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className={style.logowrapper}>
-            <div>
-              <Link to="/">
-                <img className={style.logo} src={logo} alt="" />
+      <div className={`navbar navbar-light bg-light ${style.logowrapper}`}>
+        <div>
+          <Link to="/">
+            <img
+              className={style.logo}
+              src="https://i.ibb.co/WBsygQj/NEW-LOGO.png"
+              alt=""
+            />
+          </Link>
+        </div>
+        <div>
+          <ul className={style.navList}>
+            <li>
+              <Link
+                className={style.contactNumber}
+                to="https://wa.me/918218327600"
+              >
+                <img
+                  src="	https://nuvonirmaan.com/wp-content/themes/nuvoco/assets/images/whatsapp.png"
+                  alt=""
+                  className={`img-fluid  ${style.watsAppImg}`}
+                />
+                <span> +91 8218327600</span>
               </Link>
-            </div>
-            <div className={style.smallScreen}>
-              <ul className={style.navList}>
+            </li>
+            <li>
+              <Link className={style.email} to="">
+                <FontAwesomeIcon
+                  className={style.emailIcon}
+                  icon={faEnvelope}
+                />
+                <span> metromancastingyards@gmail.com</span>
+              </Link>
+            </li>
+            {Object?.keys(userData)?.length > 0 ? (
+              <>
+                <li>
+                  <Link className={`${style.contactNumber}`} to="/cart">
+                    <FontAwesomeIcon icon={faCartShopping} />
+                    <span>&nbsp;Cart</span>
+                  </Link>
+                </li>
                 <li>
                   <Link
-                    className={style.contactNumber}
-                    to="https://wa.me/918218327600"
+                    className={`${style.contactNumber}`}
+                    to="/personaldetail"
                   >
-                    <img
-                      src="	https://nuvonirmaan.com/wp-content/themes/nuvoco/assets/images/whatsapp.png"
-                      alt=""
-                      className={`img-fluid  ${style.watsAppImg}`}
-                    />
-                    <span> +91 8218327600</span>
+                    <span>UserDetail</span>
                   </Link>
                 </li>
                 <li>
-                  <Link className={style.email} to="">
-                    <FontAwesomeIcon
-                      className={style.emailIcon}
-                      icon={faEnvelope}
-                    />
-                    <span> metromancastingyards@gmail.com</span>
+                  <Link
+                    className={`${style.contactNumber}`}
+                    to=""
+                    onClick={logout}
+                  >
+                    Logout
                   </Link>
                 </li>
-              </ul>
-            </div>
-          </div>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link className={`${style.contactNumber}`} to="/login">
+                    <FontAwesomeIcon icon={faUser} />
+                    &nbsp;Login
+                  </Link>
+                </li>
+                <li>
+                  <Link className={`${style.contactNumber}`} to="/signup">
+                    <FontAwesomeIcon icon={faUser} />
+                    &nbsp;Signup
+                  </Link>
+                </li>
+              </>
+            )}
+          </ul>
         </div>
       </div>
       <div>
         <nav className="navbar navbar-expand-lg bg-primary">
           <div className="container-fluid">
-            {/* <Link className="navbar-brand" to="/">
-              MetroMan
-            </Link> */}
             <button
               className="navbar-toggler"
               type="button"
@@ -130,56 +168,6 @@ export default function Navbar() {
                   </Link>
                 </li>
 
-                {Object?.keys(userData)?.length > 0 ? (
-                  <>
-                    <li className="nav-item">
-                      <Link className={`nav-link ${style.navLinks}`} to="/cart">
-                        <FontAwesomeIcon icon={faCartShopping} />
-                        <span>&nbsp;Cart</span>
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        className={`nav-link ${style.navLinks}`}
-                        to="/personaldetail"
-                      >
-                        <span>UserDetail</span>
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        className={`nav-link ${style.navLinks}`}
-                        to=""
-                        onClick={logout}
-                      >
-                        Logout
-                      </Link>
-                    </li>
-                  </>
-                ) : (
-                  <>
-                    {" "}
-                    <li className="nav-item">
-                      <Link
-                        className={`nav-link ${style.navLinks}`}
-                        to="/login"
-                      >
-                        <FontAwesomeIcon icon={faUser} />
-                        &nbsp;Login
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        className={`nav-link ${style.navLinks}`}
-                        to="/signup"
-                      >
-                        <FontAwesomeIcon icon={faUser} />
-                        &nbsp;Signup
-                      </Link>
-                    </li>
-                  </>
-                )}
                 <li className="nav-item dropdown">
                   <a
                     className={`nav-link dropdown-toggle ${style.navLinks}`}
@@ -197,6 +185,11 @@ export default function Navbar() {
                       </Link>
                     </li>
                     <li>
+                      <Link className={`dropdown-item`} to="/Termsandcondition">
+                        Terms and condition
+                      </Link>
+                    </li>
+                    {/* <li>
                       <Link className={`dropdown-item`} to="/PrivacyPolicy">
                         Privacy Policy
                       </Link>
@@ -210,12 +203,7 @@ export default function Navbar() {
                       <Link className={`dropdown-item`} to="/PrivacyPolicy">
                         Privacy Policy
                       </Link>
-                    </li>
-                    <li>
-                      <Link className={`dropdown-item`} to="/PrivacyPolicy">
-                        Privacy Policy
-                      </Link>
-                    </li>            
+                    </li> */}
                   </ul>
                 </li>
               </ul>

@@ -18,6 +18,7 @@ import Cart from "./pages/Cart";
 import Personaldetail from "./pages/Personaldetail";
 import Paymentsuccess from "./pages/Paymentsuccess";
 import PrivacyPolicy from "./pages/Extra/PrivacyPolicy";
+import Termsandcondition from "./pages/Extra/Termsandcondition";
 
 function App() {
   // const browserRouter = createBrowserRouter([
@@ -56,6 +57,7 @@ function App() {
           <Route path="/personaldetail" element={<Personaldetail />} />
           <Route path="/paymentsuccess" element={<Paymentsuccess />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/Termsandcondition" element={<Termsandcondition />} />
         </Routes>
       </BrowserRouter>
     </>
