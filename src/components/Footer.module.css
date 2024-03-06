@@ -1,29 +1,45 @@
 .section {
     background-color: #00162a;
-    padding: 45px 45px;
+    padding: 45px 45px 80px;
+}
+
+.quickLinksOuter{
+    border-right: 1px solid white;
+}
+
+@media (max-width:800px) {
+    .quickLinksOuter {
+        border-right: 1px solid #00162a;
+    }
 }
 
 .quickLinks {
     color: #fff;
     font-size: 18px;
-    padding-bottom: 5px;    
-}
+    padding-bottom: 5px;   
+    font-weight: 500;    
+} 
+
 
 .quickLinks + ul > li {
     color: #fff;
     list-style: none;
 }
 
+.link {
+    text-decoration: none;
+    color: #fff;
+}
+
 .getInTouch{
     color: #fff;
     font-size: 18px;
     padding-bottom: 5px; 
+    font-weight: 500;
 }
 
-.address::before{
-  content: '\f3c5'; 
-  font-family: 'Font Awesome 5 Free';
-  margin-right: 0.5em; 
+.iconMain {
+    color: #aea8b9;
 }
 
 .getInTouch + ul > li {

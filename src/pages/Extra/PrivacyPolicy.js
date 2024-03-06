@@ -124,7 +124,7 @@ export default function PrivacyPolicy() {
           <div className={style.privacyContent}>
             <p className={style.innerContent}>
               If you have any questions or concerns about this Privacy Policy,
-              please contact us at [metromancastingyards@gmail.com].
+              please contact us at metromancastingyards@gmail.com.
             </p>
           </div>
         </div>

@@ -1,16 +1,17 @@
 import React from "react";
 import style from "./AboutUs.module.css";
+import Footer from "../components/Footer";
 
 export default function AboutUs() {
   return (
     <>
       <section className={`container ${style.aboutUs}`}>
-        <div className="row d-flex ">
-          <div className="col">
-            <h3>
-              "Metroman Casting Yards: Transforming Construction through
-              Innovation and Excellence"
-            </h3>
+        <h1 className={style.aboutUsHeading}>
+          Transforming Construction through Innovation
+          and Excellence
+        </h1>
+        <div className="row pt-4">
+          <div className="col-md-6">
             <p>
               Metroman Casting Yards is a pioneering force in the construction
               industry, dedicated to revolutionizing the acquisition of concrete
@@ -43,29 +44,41 @@ export default function AboutUs() {
               choice for those seeking reliability, quality, and innovation.
             </p>
           </div>
-          <div className="col">
+          <div className="col-md-6">
             <img
-              className="img-fluid"
+              className={`img-fluid ${style.imageCover}`}
               src="	https://smminfra.in/wp-content/uploads/2021/09/about-us-2-1-2048x1365.jpg"
               alt=""
             />
           </div>
         </div>
       </section>
-      <section className="container">
-        <div className={`${style.map}`}>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d674.6913461245846!2d77.1001810093421!3d28.693661610030354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d058933d5108f%3A0xcc7189618a9e93e!2sMetroman%20Casting%20Yards!5e0!3m2!1sen!2sin!4v1709288973857!5m2!1sen!2sin"
-            width="1080"
-            height="400"
-            style={{ border: 0 }}
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Metroman Casting Yards Location Map"
-          ></iframe>
+      <section>
+        <div>
+          <main>
+            <div className="container">
+              <div className={style.detailSection}>
+                <h1 className={`text-center ${style.title}`}>
+                  BUILD YOUR DREAM HOME WITH METRO NIRMAAN
+                </h1>
+                <p className={`text-center ${style.titletext}`}>
+                  With a wide range of brands across cement, concrete and modern
+                  building solutions, Metroman has a product designed to meet
+                  every requirement.
+                </p>
+              </div>
+              <div className="p-5">
+                <img
+                  className="img-fluid mx-auto d-block "
+                  src="https://i.ibb.co/JtKFcT7/Pngtree-modern-house-visualized-in-stunning-3757528.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </main>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

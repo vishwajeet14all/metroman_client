@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div>
       <Carousel />
-      <Card />
+      <Card />      
       <section>
         <div className={style.constructionStages}>
           <div className="container text-center">
@@ -206,32 +206,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
-        <div>
-          <main>
-            <div className="container">
-              <div className={style.detailSection}>
-                <h1 className={`text-center ${style.title}`}>
-                  BUILD YOUR DREAM HOME WITH METRO NIRMAAN
-                </h1>
-                <p className={`text-center ${style.titletext}`}>
-                  With a wide range of brands across cement, concrete and modern
-                  building solutions, Metroman has a product designed to meet
-                  every requirement. Want to know which product is perfect for
-                  your home? Select any pointer below and find out.
-                </p>
-              </div>
-              <div className="p-5">
-                <img
-                  className="img-fluid mx-auto d-block "
-                  src="https://nuvonirmaan.com/wp-content/uploads/2020/05/Application-Guide-Exterior-1.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
-          </main>
-        </div>
-      </section>
       <section className={style.innovationSection}>
         <div className={`container`}>
           <div className="text-center">
@@ -240,18 +214,18 @@ export default function Home() {
               DEVELOPMENT AND INNOVATION CENTRE
             </h1>
           </div>
-          <div className={` ${style.innovationImage}`}>
-            <div className={` ${style.innovationImageWrapper}`}>
+          <div className={`${style.innovationImage}`}>
+            <div className={`${style.innovationImageWrapper}`}>
               <img
                 className="img-fluid"
-                src="https://nuvonirmaan.com/wp-content/uploads/2020/04/Innovation_img1.png"
+                src="https://i.ibb.co/0JF2WDM/CDIC-573x488-px.jpg"
                 alt=""
               />
             </div>
-            <div className={` ${style.innovationImageWrapper}`}>
+            <div className={`${style.innovationImageWrapper}`}>
               <img
                 className="img-fluid"
-                src="https://nuvonirmaan.com/wp-content/uploads/2020/05/CDIC_573x488_px.jpg"
+                src="https://i.ibb.co/H2L9hDx/Innovation-img1.png"
                 alt=""
               />
             </div>
@@ -266,22 +240,17 @@ export default function Home() {
           </div>
           <div>
             <h2 className={`text-center ${style.innovationLabel}`}>
-              METROMAN’S CDIC RECEIVES NABL ACCREDITATION
+              CERTIFICATE OF NOMINATION
             </h2>
           </div>
           <div>
-            <div className="text-center col-lg-12 p-5">
-              <div className="row">
-                <div className="col-lg-6 col-6 border-primary border-end border-2">
+            <div className="p-5">
+              <div className="row justify-content-center">
+                <div className="col-8 ">
                   <img
-                    src="https://nuvonirmaan.com/wp-content/uploads/2020/04/Cdic_logo.png"
+                    src="https://i.ibb.co/5Bp0KpW/award.jpg"
                     alt=""
-                  />
-                </div>
-                <div className="col-lg-6 col-6">
-                  <img
-                    src="	https://nuvonirmaan.com/wp-content/uploads/2020/04/Nabl_logo.png"
-                    alt=""
+                    className="img-fluid"
                   />
                 </div>
               </div>
@@ -315,7 +284,7 @@ export default function Home() {
                         <img
                           style={{ height: "110px" }}
                           className="img-fluid mx-auto"
-                          src="https://nuvonirmaan.com/wp-content/uploads/2020/04/assured.png"
+                          src="https://i.ibb.co/HpDjH9J/assured.png"
                           alt=""
                         />
                       </div>
@@ -332,7 +301,7 @@ export default function Home() {
                         <img
                           style={{ height: "110px" }}
                           className="img-fluid mx-auto"
-                          src="https://nuvonirmaan.com/wp-content/uploads/2020/04/ontime_delivery.png"
+                          src="https://img.freepik.com/free-vector/concrete-mixing-truck-white-background_1308-109837.jpg?w=1060&t=st=1709536597~exp=1709537197~hmac=5f5de9dd0782d0dbd7473108f1671608d262dc73c7a45d4aa39d7bafa0d0cda7"
                           alt=""
                         />
                       </div>
@@ -349,7 +318,7 @@ export default function Home() {
                         <img
                           style={{ height: "110px" }}
                           className="img-fluid mx-auto"
-                          src="	https://nuvonirmaan.com/wp-content/uploads/2020/04/Expert_img.png"
+                          src="https://i.ibb.co/b2Zm79p/Expert-img.png"
                           alt=""
                         />
                       </div>
@@ -386,12 +355,12 @@ export default function Home() {
                   <div className={`carousel-item active ${style.testiMonial}`}>
                     <div className={style.testimonialImgOuter}>
                       <img
-                        src="https://nuvonirmaan.com/wp-content/uploads/2020/04/anil_sharma-120x120.png"
+                        src="https://i.ibb.co/gPP0LN4/istockphoto-1213291408-612x612.jpg"
                         className={`d-block img-fluid ${style.imgTestimonials}`}
                         alt="..."
                       />
                       <img
-                        src="https://nuvonirmaan.com/wp-content/uploads/2020/04/test_border_img.png"
+                        src="https://i.ibb.co/zPFwQGk/test-border-img.png"
                         alt="..."
                       />
                       <div className={`text-center`}>
@@ -401,8 +370,8 @@ export default function Home() {
                           strength Metroman is the first company to work towards
                           saving water during construction
                         </p>
-                        <h4>Mr. Anil Sharma</h4>
-                        <p>Jaipur, Rajasthan</p>
+                        <h4>Mr. Rajeev Sharma</h4>
+                        <p>Noida</p>
                       </div>
                     </div>
                   </div>
@@ -411,12 +380,12 @@ export default function Home() {
                   <div className={`carousel-item ${style.testiMonial}`}>
                     <div className={style.testimonialImgOuter}>
                       <img
-                        src="https://nuvonirmaan.com/wp-content/uploads/2020/04/soyab_ali-120x120.png"
+                        src="https://i.ibb.co/SNsS5mp/360-F-303119721-Eab-Yow-CVs-PMk-Co7-UMSGWx4-Z2-Av-Nk-R7b-V.jpg"
                         className={`d-block img-fluid ${style.imgTestimonials}`}
                         alt="..."
                       />
                       <img
-                        src="https://nuvonirmaan.com/wp-content/uploads/2020/04/test_border_img.png"
+                        src="https://i.ibb.co/zPFwQGk/test-border-img.png"
                         alt=""
                       />
                       <div className={`text-center`}>
@@ -424,7 +393,7 @@ export default function Home() {
                           Now I can enjoy the rain from balcony again, thanks to
                           Metroman's Cement
                         </p>
-                        <h4>Mr. Soyab Ali</h4>
+                        <h4>Mr. Ajaj Ali</h4>
                         <p>New Delhi</p>
                       </div>
                     </div>
@@ -443,7 +412,7 @@ export default function Home() {
                 <div className={`${style.formSection}`}>
                   <img
                     className={`${style.guidanceImage}`}
-                    src="https://nuvonirmaan.com/wp-content/uploads/2020/05/guide_image_comp.png"
+                    src="https://i.ibb.co/nsm7ShL/guide-image-comp.png"
                     alt=""
                   />
                 </div>
@@ -455,7 +424,7 @@ export default function Home() {
                       LOOKING FOE GUIDANCE?
                     </h2>
                     <h5 className={`text-center ${style.guidanceText}`}>
-                      For free site visit by a Nuvoco expert, get in touch with
+                      For free site visit by a Metroman expert, get in touch with
                       us.
                     </h5>
                     <h3 className={`text-center p-2`}>Fill-in your details:</h3>
@@ -530,7 +499,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
       <Copywrite />
       <div className={style.watsapp}>
         <Link to="https://wa.me/918218327600">

@@ -19,6 +19,10 @@ import Personaldetail from "./pages/Personaldetail";
 import Paymentsuccess from "./pages/Paymentsuccess";
 import PrivacyPolicy from "./pages/Extra/PrivacyPolicy";
 import Termsandcondition from "./pages/Extra/Termsandcondition";
+import Contactus from "./pages/Extra/Contactus";
+import Cancellationandrefund from "./pages/Cancellationandrefund";
+import Shippinganddelivery from "./pages/Shippinganddelivery";
+import Disclaimer from "./pages/Extra/Disclaimer";
 
 function App() {
   // const browserRouter = createBrowserRouter([
@@ -57,7 +61,17 @@ function App() {
           <Route path="/personaldetail" element={<Personaldetail />} />
           <Route path="/paymentsuccess" element={<Paymentsuccess />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-          <Route path="/Termsandcondition" element={<Termsandcondition />} />
+          <Route path="/termsandcondition" element={<Termsandcondition />} />
+          <Route path="/contactus" element={<Contactus />} />
+          <Route
+            path="/cancellationandrefund"
+            element={<Cancellationandrefund />}
+          />
+          <Route
+            path="/shippinganddelivery"
+            element={<Shippinganddelivery />}
+          />
+          <Route path="/disclaimer" element={<Disclaimer />} />
         </Routes>
       </BrowserRouter>
     </>

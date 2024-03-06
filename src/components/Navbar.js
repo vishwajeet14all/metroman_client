@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className={`navbar navbar-light bg-light ${style.logowrapper}`}>
+      <div className={`navbar ${style.logowrapper}`}>
         <div>
           <Link to="/">
             <img
@@ -51,7 +51,7 @@ export default function Navbar() {
                 to="https://wa.me/918218327600"
               >
                 <img
-                  src="	https://nuvonirmaan.com/wp-content/themes/nuvoco/assets/images/whatsapp.png"
+                  src="https://i.ibb.co/wLfMm4J/whatsapp.png"
                   alt=""
                   className={`img-fluid  ${style.watsAppImg}`}
                 />
@@ -140,6 +140,11 @@ export default function Navbar() {
                     Home
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className={`nav-link ${style.navLinks}`} to="/aboutus">
+                    About Us
+                  </Link>
+                </li>
 
                 <li className="nav-item">
                   <Link className={`nav-link ${style.navLinks}`} to="/stages">
@@ -147,11 +152,6 @@ export default function Navbar() {
                   </Link>
                 </li>
 
-                <li className="nav-item">
-                  <Link className={`nav-link ${style.navLinks}`} to="/aboutus">
-                    About Us
-                  </Link>
-                </li>
 
                 <li className="nav-item">
                   <Link
@@ -180,30 +180,36 @@ export default function Navbar() {
                   </a>
                   <ul className="dropdown-menu">
                     <li>
-                      <Link className={`dropdown-item`} to="/PrivacyPolicy">
+                      <Link className={`dropdown-item`} to="/privacyPolicy">
                         Privacy Policy
                       </Link>
                     </li>
                     <li>
-                      <Link className={`dropdown-item`} to="/Termsandcondition">
+                      <Link className={`dropdown-item`} to="/termsandcondition">
                         Terms and condition
                       </Link>
                     </li>
-                    {/* <li>
-                      <Link className={`dropdown-item`} to="/PrivacyPolicy">
-                        Privacy Policy
+                    <li>
+                      <Link className={`dropdown-item`} to="/contactus">
+                        Contact Us
                       </Link>
                     </li>
                     <li>
-                      <Link className={`dropdown-item`} to="/PrivacyPolicy">
-                        Privacy Policy
+                      <Link
+                        className={`dropdown-item`}
+                        to="/Cancellationandrefund"
+                      >
+                        Cancellation and refund
                       </Link>
                     </li>
                     <li>
-                      <Link className={`dropdown-item`} to="/PrivacyPolicy">
-                        Privacy Policy
+                      <Link
+                        className={`dropdown-item`}
+                        to="/Shippinganddelivery"
+                      >
+                        Shipping and delivery
                       </Link>
-                    </li> */}
+                    </li>
                   </ul>
                 </li>
               </ul>

@@ -134,35 +134,6 @@
     text-transform: uppercase;
 }
 
-
-/* Detail Section */
-
-.title {
-    padding-bottom: 30px;
-}
-
-.title::after {
-    content: '';
-    /* Empty content box */
-    display: block;
-    /* Make it a block-level element */
-    width: 70px;
-    /* Set the width of the line */
-    height: 3px;
-    /* Set the height (thickness) of the line */
-    background-color: #4e91f5;
-    /* Set the color of the line */
-    margin-top: 18px;
-    /* Adjust the spacing between text and line */
-    left: 47%;
-    position: absolute;
-}
-
-.titletext {
-    font-size: 18px;
-    line-height: 34px;
-}
-
 /* Inovation field */
 
 .innovationSection {
@@ -275,8 +246,11 @@
 
 .imgTestimonials {
     width: 100px;
+    height: 100px;
     background-color: #fff;
     display: block;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .testiMonial {

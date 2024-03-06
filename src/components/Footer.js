@@ -10,32 +10,50 @@ import {
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEnvelope,
+  faLocationDot,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 export default function Footer() {
   return (
     <section className={style.section}>
       <div className={`container`}>
         <div className="row">
-          <div className={`col-md-4 col-sm-6 `}>
+          <div className={`col-md-4 ${style.quickLinksOuter}`}>
             <div className={style.quickLinks}>Quick Links</div>
             <ul>
-              <li>- Home</li>
-              <li>- Contact Us</li>
+              <li><Link className={style.link} to="/">- Home</Link></li>
+              <li><Link className={style.link} to="/contactus">- Contact Us</Link></li>
               <li>- Services</li>
               <li>- Blog</li>
-              <li>- Privacy Policy</li>
+              <li><Link className={style.link} to="/privacypolicy"></Link>- Privacy Policy</li>
             </ul>
           </div>
-          <div className={`col-md-4 col-sm-6 `}>
+          <div className={`col-md-4 ${style.quickLinksOuter}`}>
             <div className={style.getInTouch}>Get in Touch</div>
             <ul>
-              <li className={style.address}>
-                <FontAwesomeIcon icon={faLocationDot} />
-                G/F, 1137, GH 14 Paschim Vihar, GH 14, Paschim Vihar, New Delhi,
-                West Delhi, Delhi, 110087
+              <li className="row">
+                <span className={`col-1`}>
+                  <FontAwesomeIcon icon={faLocationDot} className={style.iconMain} />
+                </span>
+                <span className={`col-11`}>
+                  G/F, 1137, GH 14 Paschim Vihar, GH 14, Paschim Vihar, New
+                  Delhi, West Delhi, Delhi, 110087
+                </span>
               </li>
-              <li>metromancastingyards@gmail.com</li>
-              <li>91 8218327600</li>
+              <li className="row">
+                <span className={`col-1`}>
+                  <FontAwesomeIcon icon={faEnvelope} className={style.iconMain} />
+                </span>
+                <span className={`col-11`}>metromancastingyards@gmail.com</span>
+              </li>
+              <li className="row">
+                <span className={`col-1`}>
+                  <FontAwesomeIcon icon={faPhone} className={style.iconMain} />
+                </span>
+                <span className={`col-11`}>+91-8218327600</span>
+              </li>
             </ul>
           </div>
           <div className={`col-md-4 col-sm-12`}>

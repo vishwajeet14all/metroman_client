@@ -32,7 +32,7 @@ export default function Stages() {
                 <div className={style.stageImageWrapper}>
                   <img
                     className={` ${style.stageImage}`}
-                    src="https://nuvonirmaan.com/wp-content/uploads/2020/04/sub_structure.png"
+                    src="https://i.ibb.co/RpGdgQY/sub-structure.png"
                     alt=""
                   />
                 </div>
@@ -47,7 +47,7 @@ export default function Stages() {
                 <div className={style.stageImageWrapperBg}>
                   <img
                     className={` ${style.stageImage}`}
-                    src="https://nuvonirmaan.com/wp-content/uploads/2020/04/plinth_level.png"
+                    src="https://i.ibb.co/tsBLCB2/plinth-level.png"
                     alt=""
                   />
                 </div>
@@ -62,7 +62,7 @@ export default function Stages() {
                 <div className={style.stageImageWrapper}>
                   <img
                     className={` ${style.stageImage}`}
-                    src="https://nuvonirmaan.com/wp-content/uploads/2020/04/super_structure.png"
+                    src="https://i.ibb.co/nDKsPWf/super-structure.png"
                     alt=""
                   />
                 </div>
@@ -77,7 +77,7 @@ export default function Stages() {
                 <div className={style.stageImageWrapperBg}>
                   <img
                     className={` ${style.stageImage}`}
-                    src="https://nuvonirmaan.com/wp-content/uploads/2020/04/masonary_builder.png"
+                    src="https://i.ibb.co/vjdCBdV/masonary-builder.png"
                     alt=""
                   />
                 </div>
@@ -92,7 +92,7 @@ export default function Stages() {
                 <div className={style.stageImageWrapper}>
                   <img
                     className={` ${style.stageImage}`}
-                    src="https://nuvonirmaan.com/wp-content/uploads/2020/04/sub_structure.png"
+                    src="https://i.ibb.co/RpGdgQY/sub-structure.png"
                     alt=""
                   />
                 </div>
@@ -107,7 +107,7 @@ export default function Stages() {
                 <div className={style.stageImageWrapperBg}>
                   <img
                     className={` ${style.stageImage}`}
-                    src="https://nuvonirmaan.com/wp-content/uploads/2020/04/plaster.png"
+                    src="https://i.ibb.co/bRXXxfv/plaster.png"
                     alt=""
                   />
                 </div>
@@ -122,7 +122,7 @@ export default function Stages() {
                 <div className={style.stageImageWrapper}>
                   <img
                     className={` ${style.stageImage}`}
-                    src="https://nuvonirmaan.com/wp-content/uploads/2020/04/water_proof.png"
+                    src="https://i.ibb.co/WPHTfTN/water-proof.png"
                     alt=""
                   />
                 </div>
@@ -137,7 +137,7 @@ export default function Stages() {
                 <div className={style.stageImageWrapperBg}>
                   <img
                     className={` ${style.stageImage}`}
-                    src="https://nuvonirmaan.com/wp-content/uploads/2020/04/paint_application.png"
+                    src="https://i.ibb.co/g3JdYHf/paint-application.png"
                     alt=""
                   />
                 </div>
@@ -152,7 +152,7 @@ export default function Stages() {
                 <div className={style.stageImageWrapper}>
                   <img
                     className={` ${style.stageImage}`}
-                    src="	https://nuvonirmaan.com/wp-content/uploads/2020/04/electrical.png"
+                    src="https://i.ibb.co/YfGmXpW/electrical.png"
                     alt=""
                   />
                 </div>
@@ -167,7 +167,7 @@ export default function Stages() {
                 <div className={style.stageImageWrapper}>
                   <img
                     className={` ${style.stageImage}`}
-                    src="https://nuvonirmaan.com/wp-content/uploads/2020/04/wall_putty.png"
+                    src="https://i.ibb.co/0BFkB6B/wall-putty.png"
                     alt=""
                   />
                 </div>

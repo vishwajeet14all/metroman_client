@@ -5,7 +5,6 @@ import axios from "axios";
 
 const URL = process.env.REACT_APP_API_URL;
 
-
 export default function Products() {
   async function checkOutHandler(price) {
     //requesting key from backend
@@ -65,7 +64,7 @@ export default function Products() {
         //       show_default_blocks: true,
         //     },
         //   },
-        // },       
+        // },
         // config: {
         //   display: {
         //     blocks: {
@@ -97,7 +96,9 @@ export default function Products() {
           <div className="d-flex justify-content-center pt-5">
             <iframe
               className={`${style.player}`}
-              src="https://www.youtube.com/embed/yJztRTfqowk?si=b-MNPGfC7VwYATna"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/-K-5mPse5-c?si=I8LwIqPjI6knlq-v"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -129,7 +130,7 @@ export default function Products() {
                           onClick={() => checkOutHandler(prod.price)}
                           className="btn btn-primary"
                         >
-                        Purchase
+                          Purchase
                         </button>
                       </div>
                     </div>

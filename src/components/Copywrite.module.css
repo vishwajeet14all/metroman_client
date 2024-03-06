@@ -3,4 +3,9 @@
     color: #231f20;
     font-size: 14px;
     font-weight:400;
+    
+}
+
+.link {
+    text-decoration: none;
 }

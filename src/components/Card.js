@@ -8,13 +8,13 @@ export default function Card() {
       <div className={`container ${style.container}`}>
         <div className={`card ${style.cardSingle}`} style={{ width: "18rem" }}>
           <img
-            src="https://nuvonirmaan.com/wp-content/uploads/2020/04/home_building.png"
+            src="https://i.ibb.co/Dp2rMtQ/home-building.png"
             className={`card-img-top mx-auto ${style.cardImg}`}
             alt="..."
           />
-          <div className={`card-body text-center ${style}`}>
-            <h5 className="card-title">CONSTRUCTION STAGES</h5>
-            <p className="card-text">
+          <div className={`card-body text-center`}>
+            <h4 className={`card-title ${style.box}`}>CONSTRUCTION STAGES</h4>
+            <p className="card-text pt-4">
               Essential steps of home-building you need to know
             </p>     
             <Link to="/stages" className={`btn btn-secondary ${style.cardButton}`}>
@@ -24,13 +24,13 @@ export default function Card() {
         </div>
         <div className={`card ${style.cardSingle}`} style={{ width: "18rem" }}>
           <img
-            src="https://nuvonirmaan.com/wp-content/uploads/2020/04/calculator.png"
+            src="https://i.ibb.co/BLnjB8d/calculator.png"
             className={`card-img-top mx-auto ${style.cardImg}`}
             alt="..."
           />
           <div className="card-body text-center">
-            <h5 className="card-title">CALCULATORS</h5>
-            <p className="card-text">
+            <h4 className={`card-title ${style.box}`}>CALCULATORS</h4>
+            <p className="card-text pt-4">
               How ‘NOT’ to exceed the budget while building your home
             </p>
             <Link to="/calculator" className={`btn btn-secondary ${style.cardButton}`}>
@@ -40,13 +40,13 @@ export default function Card() {
         </div>
         <div className={`card ${style.cardSingle}`} style={{ width: "18rem" }}>
           <img
-            src="	https://nuvonirmaan.com/wp-content/uploads/2020/04/house_plan.png"
+            src="	https://i.ibb.co/gZVZ55H/house-plan.png"
             className={`card-img-top mx-auto ${style.cardImg}`}
             alt="..."
           />
           <div className="card-body text-center">
-            <h5 className="card-title">HOUSE PLANS</h5>
-            <p className="card-text">
+            <h4 className={`card-title ${style.box}`}>HOUSE PLANS</h4>
+            <p className="card-text pt-4">
               Floor plans to inspire you while building your own abode
             </p>
             <Link href="#" className={`btn btn-secondary ${style.cardButton}`}>
@@ -62,3 +62,4 @@ export default function Card() {
     </section>
   );
 }
+
