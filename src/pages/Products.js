@@ -11,11 +11,11 @@ export default function Products() {
     try {
       const {
         data: { key },
-      } = await axios.get(`${URL}/api/payment/key`);
+      } = await axios.get(`/api/payment/key`);
       //requesting to create order
       const {
         data: { order },
-      } = await axios.post(`${URL}/api/payment/checkout`, {
+      } = await axios.post(`/api/payment/checkout`, {
         price,
       });
       const options = {

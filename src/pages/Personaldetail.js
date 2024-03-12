@@ -46,7 +46,7 @@ export default function Personaldetail() {
   //get o auth data from backend
   const getUserSuccess = async() => {
     try {
-      const user = await axios.get(`${URL}/api/users/login/success`, {withCredentials:true});
+      const user = await axios.get(`/api/users/login/success`, {withCredentials:true});
       console.log("Response from o auth ", user);  
       // setUserData(user.data.user)
     } catch (error) {

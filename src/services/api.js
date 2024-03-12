@@ -10,7 +10,7 @@ const URL = process.env.REACT_APP_API_URL;
 
 export const signUp = async (data) => {
   try {
-    await axios.post(`${URL}/api/users/signup`, data);
+    await axios.post(`/api/users/signup`, data);
     alert("Sign up Successful");
   } catch (error) {
     console.log("Error while calling signup Api ", error);
@@ -19,7 +19,7 @@ export const signUp = async (data) => {
 
 export const login = async (data) => {
   try {
-    await axios.post(`${URL}/api/users/login`, data);    
+    await axios.post(`/api/users/login`, data);    
     return alert("Login Successfull")
   } catch (error) {
     console.log("Error while calling signup Api ", error);

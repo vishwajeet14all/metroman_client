@@ -12,12 +12,12 @@ export default function Navbar() {
   const [userData, setUserData] = useState({});
   //logout functionality with o auth
   const logout = () => {
-    window.open(`${URL}/api/users/logout`, "_self");
+    window.open(`/api/users/logout`, "_self");
   };
 
   const getUserSuccess = async () => {
     try {
-      const user = await axios.get(`${URL}/api/users/login/success`, {
+      const user = await axios.get(`/api/users/login/success`, {
         withCredentials: true,
       });
       console.log("Response from o auth ", user);

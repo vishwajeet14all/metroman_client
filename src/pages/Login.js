@@ -14,7 +14,7 @@ export default function Login() {
     password: "",
   })
   function loginWithGoogle() {   
-    window.open(`${URL}/auth/google/callback`, "_self");
+    window.open(`/auth/google/callback`, "_self");
   }
   const handleChange = (e) => {
     const { name, value } = e.target;
