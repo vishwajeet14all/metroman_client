@@ -1,0 +1,24 @@
+$primary: #faf6fa;
+$secondary: #F8F8F8;
+$white:#fff;
+$dark:#232323;
+$gray:#ccc;
+
+
+.backgroundColor {
+    background-color: $primary;
+}
+
+.boldText {
+    font-weight: bold;
+}
+
+// Variables for admin page 
+// Background
+$main-bg:#2a3447;
+$soft-bg:#384256;
+$dark-bg:#222b3c;
+// TEXT
+$main-color:white;
+$soft-color:#ddd;
+$dark-color:#2a3447;

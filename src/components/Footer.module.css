@@ -62,12 +62,11 @@
     margin: 10px;
     background-color:#aea8b9;
     border-radius: 5px;
-    display: inline-block;
     padding: 10px;
 
 }
 
-.socialIcons{
+.socialIcons{    
     width: 20px;
     height: 20px;
     background-color: #aea8b9;

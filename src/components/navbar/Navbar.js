@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import style from "./Navbar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import axios from "axios";
+import { logout } from "../../services/api";
+import "./navbar.scss";
 
 const URL = process.env.REACT_APP_API_URL;
 
 export default function Navbar() {
   const [userData, setUserData] = useState({});
-  //logout functionality with o auth
-  const logout = () => {
-    window.open(`/api/users/logout`, "_self");
-  };
+  // console.log("userData", userData);
 
+  //*----------------
+  //getting user data
+  //*----------------
   const getUserSuccess = async () => {
     try {
-      const user = await axios.get(`/api/users/login/success`, {
+      const user = await axios.get(`${URL}/api/users/login/success`, {
         withCredentials: true,
       });
       console.log("Response from o auth ", user);
@@ -67,20 +69,15 @@ export default function Navbar() {
                 <span> metromancastingyards@gmail.com</span>
               </Link>
             </li>
+
             {Object?.keys(userData)?.length > 0 ? (
               <>
-                <li>
-                  <Link className={`${style.contactNumber}`} to="/cart">
-                    <FontAwesomeIcon icon={faCartShopping} />
-                    <span>&nbsp;Cart</span>
-                  </Link>
-                </li>
                 <li>
                   <Link
                     className={`${style.contactNumber}`}
                     to="/personaldetail"
                   >
-                    <span>UserDetail</span>
+                    <span>UserDetails</span>
                   </Link>
                 </li>
                 <li>
@@ -97,13 +94,13 @@ export default function Navbar() {
               <>
                 <li>
                   <Link className={`${style.contactNumber}`} to="/login">
-                    <FontAwesomeIcon icon={faUser} />
+                    <i className="bi bi-person-lines-fill"></i>
                     &nbsp;Login
                   </Link>
                 </li>
                 <li>
                   <Link className={`${style.contactNumber}`} to="/signup">
-                    <FontAwesomeIcon icon={faUser} />
+                    <i className="bi bi-person-fill-add"></i>
                     &nbsp;Signup
                   </Link>
                 </li>
@@ -112,7 +109,8 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-      <div>
+
+      <div className="sticky-top">
         <nav className="navbar navbar-expand-lg bg-primary">
           <div className="container-fluid">
             <button
@@ -130,13 +128,9 @@ export default function Navbar() {
               className="collapse navbar-collapse"
               id="navbarSupportedContent"
             >
-              <ul className={`navbar-nav me-auto mb-2 mb-lg-0`}>
+              <ul className={`navbar-nav ${style.navbarWrapper}`}>
                 <li className="nav-item">
-                  <Link
-                    className={`nav-link ${style.navLinks}`}
-                    aria-current="page"
-                    to="/"
-                  >
+                  <Link className={`nav-link ${style.navLinks}`} to="/">
                     Home
                   </Link>
                 </li>
@@ -151,7 +145,6 @@ export default function Navbar() {
                     Construction Stages
                   </Link>
                 </li>
-
 
                 <li className="nav-item">
                   <Link
@@ -175,10 +168,14 @@ export default function Navbar() {
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
+                    id="navbarDropdown"
                   >
                     More
                   </a>
-                  <ul className="dropdown-menu">
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="navbarDropdown"
+                  >
                     <li>
                       <Link className={`dropdown-item`} to="/privacyPolicy">
                         Privacy Policy
@@ -212,11 +209,40 @@ export default function Navbar() {
                     </li>
                   </ul>
                 </li>
+                <li className="nav-item">
+                  <Link className={`nav-link ${style.navLinks}`}>
+                    <i class="bi bi-search"></i>
+                    <span>&nbsp;Search</span>
+                  </Link>
+                </li>
+                <li className="nav-item user">
+                  <Link className={`nav-link ${style.navLinks}`}>
+                    <img
+                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt=""
+                    />
+                    <span>&nbsp;Vishwajeet</span>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className={`nav-link ${style.navLinks}`}>
+                    <i className="bi bi-bell"></i>                    
+                    <span class="position-absolute top-10 start-25 translate-middle p-1 bg-danger border badge border-light rounded-circle">5
+                      <span className="visually-hidden">New alerts</span>
+                    </span>
+                  </Link>
+                </li>
+                <span>&nbsp;&nbsp;</span>
+                <li className={`nav-item ${style.cartWrapper}`}>
+                  <Link className={`nav-link ${style.navLinks}`} to="/cart">
+                    <FontAwesomeIcon icon={faCartShopping} />
+                    <span>&nbsp;Cart</span>
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
         </nav>
-        <Outlet />
       </div>
     </>
   );

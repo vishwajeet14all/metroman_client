@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Products.module.css";
-import Product from "../product";
 import axios from "axios";
+import { getAllProducts } from "../services/api";
 
 const URL = process.env.REACT_APP_API_URL;
 
 export default function Products() {
+  const [products, setProducts] = useState([]);
+
   async function checkOutHandler(price) {
     //requesting key from backend
     try {
       const {
         data: { key },
-      } = await axios.get(`/api/payment/key`);
+      } = await axios.get(`${URL}/api/payment/key`);
       //requesting to create order
       const {
         data: { order },
-      } = await axios.post(`/api/payment/checkout`, {
+      } = await axios.post(`${URL}/api/payment/checkout`, {
         price,
       });
       const options = {
@@ -86,6 +88,26 @@ export default function Products() {
     }
   }
 
+  //*--------------------------------
+  //getting product data from backend
+  //*--------------------------------
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getAllProducts();
+        // console.log("response in product.js",response.data);
+        setProducts(response.data);
+      } catch (error) {
+        console.log("Error fetching products:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  // useEffect(() => {
+  //   console.log("products", products);
+  // }, [products]);
+
   return (
     <>
       <section className={`${style.productVideoBackground}`}>
@@ -110,7 +132,7 @@ export default function Products() {
       <section className={`${style.productBackGround}`}>
         <div className="container">
           <div className="row pt-5 justify-content-evenly pb-5">
-            {Product.map((prod) => (
+            {products.map((prod) => (
               <div className="col-lg-12" key={prod._id}>
                 <div className={`card ${style.cardBackground}`}>
                   <div className="row g-0 mb-4 d-flex justify-content-center">
@@ -126,9 +148,10 @@ export default function Products() {
                       <p>{prod.description}</p>
                       <p>&#8377; {prod.price}</p>
                       <div>
+                        <button className="btn btn-primary">Add to Cart</button>
                         <button
                           onClick={() => checkOutHandler(prod.price)}
-                          className="btn btn-primary"
+                          className="btn btn-success mx-4"
                         >
                           Purchase
                         </button>

@@ -29,7 +29,7 @@ export default function Signup() {
   };
 
   const loginWithGoogle = () => {
-    window.open(`/auth/google/callback`, "_self");
+    window.open(`${URL}/auth/google/callback`, "_self");
   };
   const handleSubmit = async (e) => {
     e.preventDefault();

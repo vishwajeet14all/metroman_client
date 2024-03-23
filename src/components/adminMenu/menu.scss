@@ -1,0 +1,32 @@
+@import "../../sass/variables.scss";
+
+.menu {
+  margin-top: 10px;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    .title {
+      font-size: 13px;
+      font-weight: 400;
+      color: $soft-color;
+      text-transform: uppercase;
+    }
+
+    .listItem {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $soft-bg;
+      }
+
+    }
+  }
+}

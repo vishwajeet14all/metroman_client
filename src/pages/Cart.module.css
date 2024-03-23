@@ -1,0 +1,28 @@
+.cartImage {
+    width: 34px;
+}
+
+.orderSummaryWrapper {
+    width: 50%;
+}
+
+.orderSummary {
+    display: flex;
+    align-items: center;
+}
+
+.orderSummary div {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.formRow{
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+h1,
+p {
+    margin: 0px;
+    padding: 0px;
+}

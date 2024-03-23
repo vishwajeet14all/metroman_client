@@ -33,20 +33,20 @@ export default function Personaldetail() {
     }));
   }
   
-  //get the user
-  // const getUser = async (id) => {
-  //   console.log('getuserapi',id)
-  //   try {
-  //     return await axios.get(`${URL}/${id}`)
-  //   } catch (error) {
-  //     console.log("Error while calling getUser Api", error);
-  //   }
-  // }
-
+  // get the user
+  const getUser = async (id) => {
+    console.log('getuserapi',id)
+    try {
+      return await axios.get(`${URL}/${id}`)
+    } catch (error) {
+      console.log("Error while calling getUser Api", error);
+    }
+  }
+  
   //get o auth data from backend
   const getUserSuccess = async() => {
     try {
-      const user = await axios.get(`/api/users/login/success`, {withCredentials:true});
+      const user = await axios.get(`${URL}/api/users/login/success`, {withCredentials:true});
       console.log("Response from o auth ", user);  
       // setUserData(user.data.user)
     } catch (error) {
@@ -57,6 +57,7 @@ export default function Personaldetail() {
   useEffect(() => {
     getUserSuccess()      
   }, [])
+  
   //submiting form data
   const handleSubmit = async(e) => {
     e.preventDefault();    
@@ -92,7 +93,7 @@ export default function Personaldetail() {
 
               <div className={`row mb-3 g-3 ${style.formRow}`}>
                 <div className="col-md-6">
-                  <label htmlFor="" className="form-label">
+                  <label className="form-label">
                     First Name
                   </label>
                   <input
@@ -105,7 +106,7 @@ export default function Personaldetail() {
                   />
                 </div>
                 <div className="form-group col-md-6">
-                  <label htmlFor="" className="form-label">
+                  <label className="form-label">
                     Last Name
                   </label>
                   <input
@@ -120,7 +121,7 @@ export default function Personaldetail() {
               </div>
               <div className={`row mb-3 g-3 ${style.formRow}`}>
                 <div className="form-group col-md-6">
-                  <label htmlFor="" className="form-label">
+                  <label className="form-label">
                     Email
                   </label>
                   <input
@@ -133,7 +134,7 @@ export default function Personaldetail() {
                   />
                 </div>
                 <div className="form-group col-md-6">
-                  <label htmlFor="" className="form-label">
+                  <label className="form-label">
                     Date of Birth{" "}
                   </label>
                   <input
@@ -148,7 +149,7 @@ export default function Personaldetail() {
               </div>
               <div className={`row mb-3 g-3 ${style.formRow}`}>
                 <div className="form-group col-md-6">
-                  <label htmlFor="" className=" form-label">
+                  <label className=" form-label">
                     Gender
                   </label>
                   <select
@@ -165,7 +166,7 @@ export default function Personaldetail() {
                   </select>
                 </div>
                 <div className="form-group col-md-6">
-                  <label htmlFor="" className="form-label">
+                  <label className="form-label">
                     Profession
                   </label>
                   <select
@@ -184,7 +185,7 @@ export default function Personaldetail() {
                 </div>
               </div>
               <div className={`mb-3 {style.formRow}`}>
-                <label htmlFor="" className="form-label">
+                <label className="form-label">
                   Address
                 </label>
                 <input

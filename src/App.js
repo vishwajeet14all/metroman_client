@@ -1,14 +1,7 @@
-import "./App.css";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  // RouterProvider,
-  // createBrowserRouter,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import Stages from "./pages/Stages";
 import Calculator from "./pages/Calculator";
 import Products from "./pages/Products";
@@ -23,55 +16,70 @@ import Contactus from "./pages/Extra/Contactus";
 import Cancellationandrefund from "./pages/Cancellationandrefund";
 import Shippinganddelivery from "./pages/Shippinganddelivery";
 import Disclaimer from "./pages/Extra/Disclaimer";
+import Layout from "./pages/admin/Layout";
+import Adminhome from "./pages/admin/home/Adminhome";
+import Adminproducts from "./pages/admin/products/Adminproducts";
+import Users from "./pages/admin/users/Users";
 
 function App() {
-  // const browserRouter = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <Navbar />,
-  //     children: [
-  //       { path: "/", element: <Home /> },
-  //       { path: "/aboutus", element: <AboutUs /> },
-  //       { path: "/stages", element: <Stages /> },
-  //       { path: "/calculator", element: <Calculator /> },
-  //       { path: "/products", element: <Products /> },
-  //       { path: "/login", element: <Login /> },
-  //       { path: "/signup", element: <Signup /> },
-  //       { path: "/cart", element: <Cart /> },
-  //       { path: "/personaldetail", element: <Personaldetail /> },
-  //       { path: "/paymentsuccess", element: <Paymentsuccess /> },
-  //     ],
-  //   },
-  // ]);
+  const routeConfig = [
+    { path: "/", component: Home },
+    { path: "/aboutus", component: AboutUs },
+    { path: "/stages", component: Stages },
+    { path: "/calculator", component: Calculator },
+    { path: "/products", component: Products },
+    { path: "/login", component: Login },
+    { path: "/signup", component: Signup },
+    { path: "/cart", component: Cart },
+    { path: "/personaldetail", component: Personaldetail },
+    { path: "/paymentsuccess", component: Paymentsuccess },
+    { path: "/privacypolicy", component: PrivacyPolicy },
+    { path: "/termsandcondition", component: Termsandcondition },
+    {
+      path: "/layout",
+      element: <Layout />,
+      children: [
+        {
+          path: "adminhome",
+          element: <Adminhome />,
+        },
+        {
+          path: "users",
+          element: <Users />,
+        },
+        {
+          path: "adminproducts",
+          element: <Adminproducts />,
+        },
+      ],
+    },
+    { path: "/contactus", component: Contactus },
+    { path: "/cancellationandrefund", component: Cancellationandrefund },
+    { path: "/shippinganddelivery", component: Shippinganddelivery },
+    { path: "/disclaimer", component: Disclaimer },
+  ];
 
   return (
     <>
-      {/* <RouterProvider router={browserRouter} /> */}
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/stages" element={<Stages />} />
-          <Route path="/calculator" element={<Calculator />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/personaldetail" element={<Personaldetail />} />
-          <Route path="/paymentsuccess" element={<Paymentsuccess />} />
-          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-          <Route path="/termsandcondition" element={<Termsandcondition />} />
-          <Route path="/contactus" element={<Contactus />} />
-          <Route
-            path="/cancellationandrefund"
-            element={<Cancellationandrefund />}
-          />
-          <Route
-            path="/shippinganddelivery"
-            element={<Shippinganddelivery />}
-          />
-          <Route path="/disclaimer" element={<Disclaimer />} />
+          {routeConfig.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path}
+              element={route.element || <route.component />}
+            >
+              {route.children &&
+                route.children.map((childRoute) => (
+                  <Route
+                    key={childRoute.path}
+                    path={childRoute.path}
+                    element={childRoute.element}
+                  ></Route>
+                ))}
+            </Route>
+          ))}
         </Routes>
       </BrowserRouter>
     </>

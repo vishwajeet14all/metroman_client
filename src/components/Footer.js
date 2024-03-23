@@ -30,7 +30,7 @@ export default function Footer() {
               <li><Link className={style.link} to="/privacypolicy"></Link>- Privacy Policy</li>
             </ul>
           </div>
-          <div className={`col-md-4 ${style.quickLinksOuter}`}>
+          <div className={`col-md-4 ${style.quickLinksOuter }`}>
             <div className={style.getInTouch}>Get in Touch</div>
             <ul>
               <li className="row">
