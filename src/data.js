@@ -6,7 +6,7 @@ export const menu = [
       {
         id: 1,
         title: "Homepage",
-        url: "/",
+        url: "/layout/adminhome",
         icon: "bi bi-house-door",
       },
       {
@@ -24,13 +24,13 @@ export const menu = [
       {
         id: 1,
         title: "Users",
-        url: "/users",
+        url: "/layout/adminusers",
         icon: "bi bi-people",
       },
       {
         id: 2,
         title: "Products",
-        url: "/products",
+        url: "/layout/adminproducts",
         icon: "bi bi-cart2",
       },
       {

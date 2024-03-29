@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Bar, BarChart, ResponsiveContainer, Tooltip } from "recharts";
 import "./barChartBox.scss";
 
@@ -11,9 +10,9 @@ export default function BarChartBox(props) {
         <ResponsiveContainer width="99%" height={150}>
           <BarChart data={props.chartData}>
             <Tooltip
-              contentStyle={{ background: "#Za3447", borderRadius: "5px" }}
+              contentStyle={{ background: "#2a3447", borderRadius: "5px" }}
               labelStyle={{ display: "none" }}
-              cursor={{ fill: "none" }}
+              cursor={{ fill: "none" }}              
             />
             <Bar dataKey={props.dataKey} fill={props.color} />
           </BarChart>
@@ -22,3 +21,5 @@ export default function BarChartBox(props) {
     </div>
   );
 }
+
+

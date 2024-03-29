@@ -19,7 +19,9 @@ import Disclaimer from "./pages/Extra/Disclaimer";
 import Layout from "./pages/admin/Layout";
 import Adminhome from "./pages/admin/home/Adminhome";
 import Adminproducts from "./pages/admin/products/Adminproducts";
-import Users from "./pages/admin/users/Users";
+import AdminUsers from "./pages/admin/users/AdminUsers";
+import SingleUser from "./pages/admin/singleUser/SingleUser";
+import SingleProduct from "./pages/admin/singleProduct/SingleProduct";
 
 function App() {
   const routeConfig = [
@@ -27,7 +29,7 @@ function App() {
     { path: "/aboutus", component: AboutUs },
     { path: "/stages", component: Stages },
     { path: "/calculator", component: Calculator },
-    { path: "/products", component: Products },
+    { path: "/product", component: Products },
     { path: "/login", component: Login },
     { path: "/signup", component: Signup },
     { path: "/cart", component: Cart },
@@ -44,12 +46,20 @@ function App() {
           element: <Adminhome />,
         },
         {
-          path: "users",
-          element: <Users />,
+          path: "adminusers",
+          element: <AdminUsers />,
         },
         {
           path: "adminproducts",
           element: <Adminproducts />,
+        },
+        {
+          path: "users/:id",
+          element: <SingleUser />,
+        },
+        {
+          path: "products/:id",
+          element: <SingleProduct />,
         },
       ],
     },

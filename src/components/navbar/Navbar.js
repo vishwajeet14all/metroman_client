@@ -156,7 +156,7 @@ export default function Navbar() {
                 </li>
 
                 <li className="nav-item">
-                  <Link className={`nav-link ${style.navLinks}`} to="/products">
+                  <Link className={`nav-link ${style.navLinks}`} to="/product">
                     Products
                   </Link>
                 </li>
