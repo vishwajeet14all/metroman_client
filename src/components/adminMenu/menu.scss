@@ -1,4 +1,5 @@
 @import "../../sass/variables.scss";
+@import "../../sass/responsive.scss";
 
 .menu {
   margin-top: 10px;
@@ -14,6 +15,10 @@
       font-weight: 400;
       color: $soft-color;
       text-transform: uppercase;
+
+      @include lg {
+        display: none;
+      }
     }
 
     .listItem {
@@ -27,6 +32,11 @@
         background-color: $soft-bg;
       }
 
+      .listItemTitle {
+        @include lg {
+          display: none;
+        }
+      }
     }
   }
 }

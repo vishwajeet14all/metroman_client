@@ -39,46 +39,7 @@ export default function Products() {
         },
         theme: {
           color: "#0d6efd",
-        },
-        // config: {
-        //   display: {
-        //     blocks: {
-        //       banks: {
-        //         name: 'All payment methods',
-        //         instruments: [
-        //           {
-        //             method: 'upi'
-        //           },
-        //           {
-        //             method: 'card'
-        //           },
-        //           {
-        //               method: 'wallet'
-        //           },
-        //           {
-        //               method: 'netbanking'
-        //           }
-        //         ],
-        //       },
-        //     },
-        //     sequence: ['block.banks'],
-        //     preferences: {
-        //       show_default_blocks: true,
-        //     },
-        //   },
-        // },
-        // config: {
-        //   display: {
-        //     blocks: {
-        //       banks: {
-        //         name: 'All payment methods',
-        //         instruments: [
-        //           { method: 'upi' },
-        //         ],
-        //       },
-        //     },
-        //   },
-        // },
+        },    
       };
       //open the razorpay window
       const razor = new window.Razorpay(options);
@@ -86,11 +47,8 @@ export default function Products() {
     } catch (error) {
       console.log("Error while calling payment api ", error);
     }
-  }
-
-  //*--------------------------------
+  }  
   //getting product data from backend
-  //*--------------------------------
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -103,11 +61,9 @@ export default function Products() {
     };
     fetchData();
   }, []);
-
   // useEffect(() => {
   //   console.log("products", products);
   // }, [products]);
-
   return (
     <>
       <section className={`${style.productVideoBackground}`}>

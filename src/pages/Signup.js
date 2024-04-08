@@ -1,13 +1,11 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import style from "./Signup.module.css";
 import { signUp } from "../services/api";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const URL = process.env.REACT_APP_API_URL;
 
 export default function Signup() {
-
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -17,7 +15,7 @@ export default function Signup() {
     confirmPassword: "",
     selectedOption: "",
     acceptTerms: false,
-  });  
+  });
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -31,15 +29,21 @@ export default function Signup() {
   const loginWithGoogle = () => {
     window.open(`${URL}/auth/google/callback`, "_self");
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (
       formData.password === formData.confirmPassword &&
       formData.acceptTerms
     ) {
-      await signUp(formData);
-      console.log("Passwords match:", formData);
-      navigate("/login")
+      const signUpSuccess = await signUp(formData);
+      // console.log("signUpSuccess ",signUpSuccess);
+      if (signUpSuccess) {
+        alert("Sign up Successful");
+        navigate("/login");
+      } else {
+        alert("Sign up failed. Please try again.");
+      }
     } else {
       alert("Passwords do not match or terms are not accepted");
     }
@@ -81,11 +85,10 @@ export default function Signup() {
             placeholder="Password"
             type="password"
             name="password"
-            className="form-control form-control-lg bg-light fs-6"  
+            className="form-control form-control-lg bg-light fs-6"
             value={formData.password}
             onChange={handleChange}
             required
-        
           />
         </div>
         <div className="mb-3">
@@ -97,7 +100,6 @@ export default function Signup() {
             value={formData.confirmPassword}
             onChange={handleChange}
             required
-          
           />
         </div>
 
@@ -111,7 +113,9 @@ export default function Signup() {
             onChange={handleChange}
             required
           >
-            <option value="" disabled>Select an option</option>
+            <option value="" disabled>
+              Select an option
+            </option>
             <option value="Dealer">Dealer</option>
             <option value="Seller">Seller</option>
             <option value="Customer">Customer</option>
@@ -166,4 +170,3 @@ export default function Signup() {
     </div>
   );
 }
-

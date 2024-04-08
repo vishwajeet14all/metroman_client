@@ -1,3 +1,44 @@
+export const columns = [
+  { field: "id", headerName: "ID", width: 90 },
+  {
+    field: "img",
+    headerName: "Avatar",
+    width: 100,
+    renderCell: (params) => {
+      return (
+        <img
+          src={params.row.img || "https://i.ibb.co/1KwfzCK/Noavatar.jpg"}
+          alt=""
+        />
+      );
+    },
+  },
+  {
+    field: "name",
+    type: "string",
+    headerName: "Name",
+    width: 150,
+  },
+  {
+    field: "email",
+    type: "string",
+    headerName: "Email",
+    width: 250,
+  },
+  {
+    field: "createdAt",
+    type: "string",
+    headerName: "Created At",
+    width: 200,
+  },
+  {
+    field: "mobilenumber",
+    headerName: "Phone",
+    type: "string",
+    width: 200,
+  },
+];
+
 export const menu = [
   {
     id: 1,
@@ -314,7 +355,7 @@ export const userRows = [
     id: 1,
     img: "https://images.pexels.com/photos/8405873/pexels-photo-8405873.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
     lastName: "Hubbard",
-    firstName: "Eula",
+    name: "Eula",
     email: "kewez@@gmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
@@ -555,87 +596,93 @@ export const products = [
   },
 ];
 
+//! this file is not used
 export const singleUser = {
   id: 1,
-  title: "John Doe",
-  img: "https://images.pexels.com/photos/17397364/pexels-photo-17397364.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-  info: {
-    username: "Johndoe99",
-    fullname: "John Doe",
-    email: "johndoe@gmail.com",
-    phone: "123 456 789",
-    status: "verified",
-  },
-  chart: {
-    dataKeys: [
-      { name: "visits", color: "#82ca9d" },
-      { name: "clicks", color: "#8884d8" },
-    ],
-    data: [
-      {
-        name: "Sun",
-        visits: 4000,
-        clicks: 2400,
-      },
-      {
-        name: "Mon",
-        visits: 3000,
-        clicks: 1398,
-      },
-      {
-        name: "Tue",
-        visits: 2000,
-        clicks: 3800,
-      },
-      {
-        name: "Wed",
-        visits: 2780,
-        clicks: 3908,
-      },
-      {
-        name: "Thu",
-        visits: 1890,
-        clicks: 4800,
-      },
-      {
-        name: "Fri",
-        visits: 2390,
-        clicks: 3800,
-      },
-      {
-        name: "Sat",
-        visits: 3490,
-        clicks: 4300,
-      },
-    ],
-  },
-  activities: [
-    {
-      text: "John Doe purchased Playstation 5 Digital Edition",
-      time: "3 day ago",
-    },
-    {
-      text: "John Doe added 3 items into their wishlist",
-      time: "1 week ago",
-    },
-    {
-      text: "John Doe purchased Sony Bravia KD-32w800",
-      time: "2 weeks ago",
-    },
-    {
-      text: "John Doe reviewed a product",
-      time: "1 month ago",
-    },
-    {
-      text: "John Doe added 1 items into their wishlist",
-      time: "1 month ago",
-    },
-    {
-      text: "John Doe reviewed a product",
-      time: "2 months ago",
-    },
-  ],
+  name: "John Doe",
+  image:
+    "https://images.pexels.com/photos/17397364/pexels-photo-17397364.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+  // info: {
+  //   username: "Johndoe99",
+  //   fullname: "John Doe",
+  //   email: "johndoe@gmail.com",
+  //   phone: "123 456 789",
+  //   status: "verified",
+  // },
+  email: "rjvishwajeet007@gmail.com",
+  mobilenumber: "8081816503",
+
+  // chart: {
+  //   dataKeys: [
+  //     { name: "visits", color: "#82ca9d" },
+  //     { name: "clicks", color: "#8884d8" },
+  //   ],
+  //   data: [
+  //     {
+  //       name: "Sun",
+  //       visits: 4000,
+  //       clicks: 2400,
+  //     },
+  //     {
+  //       name: "Mon",
+  //       visits: 3000,
+  //       clicks: 1398,
+  //     },
+  //     {
+  //       name: "Tue",
+  //       visits: 2000,
+  //       clicks: 3800,
+  //     },
+  //     {
+  //       name: "Wed",
+  //       visits: 2780,
+  //       clicks: 3908,
+  //     },
+  //     {
+  //       name: "Thu",
+  //       visits: 1890,
+  //       clicks: 4800,
+  //     },
+  //     {
+  //       name: "Fri",
+  //       visits: 2390,
+  //       clicks: 3800,
+  //     },
+  //     {
+  //       name: "Sat",
+  //       visits: 3490,
+  //       clicks: 4300,
+  //     },
+  //   ],
+  // },
+  // activities: [
+  // {
+  //   text: "John Doe purchased Playstation 5 Digital Edition",
+  //   time: "3 day ago",
+  // },
+  // {
+  //   text: "John Doe added 3 items into their wishlist",
+  //   time: "1 week ago",
+  // },
+  // {
+  //   text: "John Doe purchased Sony Bravia KD-32w800",
+  //   time: "2 weeks ago",
+  // },
+  // {
+  //   text: "John Doe reviewed a product",
+  //   time: "1 month ago",
+  // },
+  // {
+  //   text: "John Doe added 1 items into their wishlist",
+  //   time: "1 month ago",
+  // },
+  // {
+  //   text: "John Doe reviewed a product",
+  //   time: "2 months ago",
+  // },
+  // ],
 };
+
 export const singleProduct = {
   id: 1,
   title: "Playstation 5 Digital Edition",

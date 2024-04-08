@@ -1,5 +1,5 @@
 import React from "react";
-import "./barChartBox.scss";
+import "./bigChartBox.scss";
 import {
   AreaChart,
   ResponsiveContainer,

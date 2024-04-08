@@ -1,21 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import style from "./Personaldetail.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
-// import Footer from "../components/Footer";
-import axios from "axios";
 import { savePersonalDetail } from "../services/api";
 import Copywrite from "../components/Copywrite";
-// import { useParams } from "react-router-dom";
-
-const URL = process.env.REACT_APP_API_URL;
-
 
 export default function Personaldetail() {
-  //useState for o auth 
-  // const [userData, setUserData] = useState({})
-  //useState for form data
+
   const [formData, setFormData] = useState({
+    image: "",
     firstname: "",
     lastname: "",
     email: "",
@@ -32,37 +25,14 @@ export default function Personaldetail() {
       [name]: value,
     }));
   }
-  
-  // get the user
-  const getUser = async (id) => {
-    console.log('getuserapi',id)
-    try {
-      return await axios.get(`${URL}/${id}`)
-    } catch (error) {
-      console.log("Error while calling getUser Api", error);
-    }
-  }
-  
-  //get o auth data from backend
-  const getUserSuccess = async() => {
-    try {
-      const user = await axios.get(`${URL}/api/users/login/success`, {withCredentials:true});
-      console.log("Response from o auth ", user);  
-      // setUserData(user.data.user)
-    } catch (error) {
-      console.log("Error while calling getUserSuccess Api ",error);
-    }
-  }
-  //using o auth data in front end
-  useEffect(() => {
-    getUserSuccess()      
-  }, [])
-  
+
   //submiting form data
-  const handleSubmit = async(e) => {
-    e.preventDefault();    
-    await savePersonalDetail(formData)
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem("token");
+    // console.log(token);
+    await savePersonalDetail(formData, token);
+  };
   return (
     <section className="pt-5">
       <div className="container">
@@ -76,13 +46,20 @@ export default function Personaldetail() {
                 <i className="bi bi-caret-right-fill"></i>
               </div>
             </div>
+            <div className="d-flex justify-content-between p-3 border border-secondary">
+              <div>
+                <i class="bi bi-wallet-fill"></i> Commission{" "}
+              </div>
+              <div>
+                <i class="bi bi-currency-rupee"></i>
+              </div>
+            </div>
           </div>
           <div className="col-sm-12 col-md-8 col-lg-8">
             <h2>Personal Details</h2>
             <p>Tell us a bit about your self</p>
 
             <form onSubmit={handleSubmit}>
-
               <div className="mb-3 p-1">
                 <div className={style.btn}>
                   <span>
@@ -93,9 +70,7 @@ export default function Personaldetail() {
 
               <div className={`row mb-3 g-3 ${style.formRow}`}>
                 <div className="col-md-6">
-                  <label className="form-label">
-                    First Name
-                  </label>
+                  <label className="form-label">First Name</label>
                   <input
                     type="text"
                     name="firstname"
@@ -106,9 +81,7 @@ export default function Personaldetail() {
                   />
                 </div>
                 <div className="form-group col-md-6">
-                  <label className="form-label">
-                    Last Name
-                  </label>
+                  <label className="form-label">Last Name</label>
                   <input
                     type="text"
                     className="form-control"
@@ -121,9 +94,7 @@ export default function Personaldetail() {
               </div>
               <div className={`row mb-3 g-3 ${style.formRow}`}>
                 <div className="form-group col-md-6">
-                  <label className="form-label">
-                    Email
-                  </label>
+                  <label className="form-label">Email</label>
                   <input
                     type="email"
                     className="form-control"
@@ -134,9 +105,7 @@ export default function Personaldetail() {
                   />
                 </div>
                 <div className="form-group col-md-6">
-                  <label className="form-label">
-                    Date of Birth{" "}
-                  </label>
+                  <label className="form-label">Date of Birth </label>
                   <input
                     type="date"
                     className="form-control"
@@ -149,9 +118,7 @@ export default function Personaldetail() {
               </div>
               <div className={`row mb-3 g-3 ${style.formRow}`}>
                 <div className="form-group col-md-6">
-                  <label className=" form-label">
-                    Gender
-                  </label>
+                  <label className=" form-label">Gender</label>
                   <select
                     name="gender"
                     id=""
@@ -160,15 +127,15 @@ export default function Personaldetail() {
                     onChange={handleChange}
                     required
                   >
-                    <option value="" disabled>Select an option</option>
+                    <option value="" disabled>
+                      Select an option
+                    </option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                   </select>
                 </div>
                 <div className="form-group col-md-6">
-                  <label className="form-label">
-                    Profession
-                  </label>
+                  <label className="form-label">Profession</label>
                   <select
                     name="profession"
                     id=""
@@ -177,7 +144,9 @@ export default function Personaldetail() {
                     onChange={handleChange}
                     required
                   >
-                    <option value="" disabled>Select an option</option>
+                    <option value="" disabled>
+                      Select an option
+                    </option>
                     <option value="Dealer">Dealer</option>
                     <option value="Seller">Seller</option>
                     <option value="Customer">Customer</option>
@@ -185,9 +154,7 @@ export default function Personaldetail() {
                 </div>
               </div>
               <div className={`mb-3 {style.formRow}`}>
-                <label className="form-label">
-                  Address
-                </label>
+                <label className="form-label">Address</label>
                 <input
                   type="text"
                   className="form-control"

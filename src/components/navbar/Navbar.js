@@ -1,36 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import style from "./Navbar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import axios from "axios";
 import { logout } from "../../services/api";
 import "./navbar.scss";
-
-const URL = process.env.REACT_APP_API_URL;
+import { getUserSuccess } from "../../services/api";
+import {
+  setUserOAuthData,
+  selectUserOAuthData,
+} from "../../redux/slices/auth/authSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Navbar() {
-  const [userData, setUserData] = useState({});
-  // console.log("userData", userData);
-
-  //*----------------
-  //getting user data
-  //*----------------
-  const getUserSuccess = async () => {
-    try {
-      const user = await axios.get(`${URL}/api/users/login/success`, {
-        withCredentials: true,
-      });
-      console.log("Response from o auth ", user);
-      setUserData(user.data.user);
-    } catch (error) {
-      console.log("Error while calling getUserSuccess Api ", error);
-    }
-  };
+  const dispatch = useDispatch();
+  const userDataOAuth = useSelector(selectUserOAuthData);
 
   useEffect(() => {
-    getUserSuccess();
+    const fetchData = async () => {
+      try {
+        const response = await getUserSuccess();
+        dispatch(setUserOAuthData(response.user));
+        // console.log(response.user);
+      } catch (error) {
+        console.log("Error in PersonalDetail in useEffect ", error);
+      }
+    };
+    fetchData();
   }, []);
 
   return (
@@ -70,7 +67,7 @@ export default function Navbar() {
               </Link>
             </li>
 
-            {Object?.keys(userData)?.length > 0 ? (
+            {Object?.keys(userDataOAuth)?.length > 0 ? (
               <>
                 <li>
                   <Link
@@ -215,30 +212,33 @@ export default function Navbar() {
                     <span>&nbsp;Search</span>
                   </Link>
                 </li>
-                <li className="nav-item user">
-                  <Link className={`nav-link ${style.navLinks}`}>
-                    <img
-                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      alt=""
-                    />
-                    <span>&nbsp;Vishwajeet</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className={`nav-link ${style.navLinks}`}>
-                    <i className="bi bi-bell"></i>                    
-                    <span class="position-absolute top-10 start-25 translate-middle p-1 bg-danger border badge border-light rounded-circle">5
-                      <span className="visually-hidden">New alerts</span>
-                    </span>
-                  </Link>
-                </li>
-                <span>&nbsp;&nbsp;</span>
-                <li className={`nav-item ${style.cartWrapper}`}>
-                  <Link className={`nav-link ${style.navLinks}`} to="/cart">
-                    <FontAwesomeIcon icon={faCartShopping} />
-                    <span>&nbsp;Cart</span>
-                  </Link>
-                </li>
+                {Object.keys(userDataOAuth).length !== 0 ? (
+                  <>
+                    <li className="nav-item">
+                      <Link className={`nav-link ${style.navLinks}`}>
+                        <i className="bi bi-bell"></i>
+                        <span class="position-absolute top-10 start-25 translate-middle p-1 bg-danger border badge border-light rounded-circle">
+                          5<span className="visually-hidden">New alerts</span>
+                        </span>
+                      </Link>
+                    </li>
+                    <li className="nav-item user">
+                      <Link className={`nav-link ${style.navLinks}`}>
+                        <img src={userDataOAuth.image} alt="" />
+                        <span>&nbsp;{userDataOAuth.name}</span>
+                      </Link>
+                    </li>
+                    <span>&nbsp;&nbsp;</span>
+                    <li className={`nav-item ${style.cartWrapper}`}>
+                      <Link className={`nav-link ${style.navLinks}`} to="/cart">
+                        <FontAwesomeIcon icon={faCartShopping} />
+                        <span>&nbsp;Cart</span>
+                      </Link>
+                    </li>
+                  </>
+                ) : (
+                  <span></span>
+                )}
               </ul>
             </div>
           </div>

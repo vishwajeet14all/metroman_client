@@ -1,3 +1,4 @@
+import React from "react";
 import "./single.scss";
 import {
   Legend,
@@ -8,8 +9,6 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import "./single.scss";
-import React from "react";
 
 export default function Single(props) {
   return (
@@ -17,22 +16,26 @@ export default function Single(props) {
       <div className="view">
         <div className="info">
           <div className="topInfo">
-            {props.img && (
+            {props.image && (
               <img
-                src={props.img || "https://i.ibb.co/1KwfzCK/Noavatar.jpg" }
+                src={props.image || "https://i.ibb.co/1KwfzCK/Noavatar.jpg"}
                 alt=""
               />
             )}
-            <h1>{props.title}</h1>
+            <h1>{props.name}</h1>
             <button>Update</button>
-          </div>
+          </div>    
           <div className="details">
-            {Object.entries(props.info).map((item) => (
-              <div className="item" key={item[0]}>
-                <span className="itemTitle">{item[0]}</span>
-                <span className="itemValue">{item[1]}</span>
+            <div className="item">
+              <div className="itemWrapper">
+                <span className="itemTitle">Email</span>
+                <span className="itemValue">{props.email}</span>
               </div>
-            ))}
+              <div className="itemWrapper">
+                <span className="itemTitle">Phone</span>
+                <span className="itemValue">{props.mobilenumber}</span>
+              </div>
+            </div>
           </div>
         </div>
         <hr />

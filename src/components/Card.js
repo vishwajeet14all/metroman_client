@@ -3,6 +3,12 @@ import style from "./Card.module.css";
 import { Link } from "react-router-dom";
 
 export default function Card() {
+
+
+
+
+
+  
   return (
     <section className={style.sectionWrapper}>
       <div className={`container ${style.container}`}>
