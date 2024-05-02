@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import style from "./Navbar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,21 +10,28 @@ import { getUserSuccess } from "../../services/api";
 import {
   setUserOAuthData,
   selectUserOAuthData,
+  selectUserLoginData,
+  unsetUserOAuthData,
 } from "../../redux/slices/auth/authSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Navbar() {
   const dispatch = useDispatch();
-  const userDataOAuth = useSelector(selectUserOAuthData);
+  const userOAuthData = useSelector(selectUserOAuthData);
+  const userLoginData = useSelector(selectUserLoginData);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await getUserSuccess();
-        dispatch(setUserOAuthData(response.user));
-        // console.log(response.user);
+        if (response) {
+          console.log("Set response in Navbar.js in redux state ", response);
+          dispatch(setUserOAuthData(response.user));
+        } else {
+          dispatch(unsetUserOAuthData());
+        }
       } catch (error) {
-        console.log("Error in PersonalDetail in useEffect ", error);
+        console.log("Error in Navbar in useEffect ", error);
       }
     };
     fetchData();
@@ -67,7 +74,8 @@ export default function Navbar() {
               </Link>
             </li>
 
-            {Object?.keys(userDataOAuth)?.length > 0 ? (
+            {Object.keys(userOAuthData).length > 0 ||
+            Object.keys(userLoginData).length > 0 ? (
               <>
                 <li>
                   <Link
@@ -201,7 +209,7 @@ export default function Navbar() {
                         className={`dropdown-item`}
                         to="/Shippinganddelivery"
                       >
-                        Shipping and delivery
+                        Order Details
                       </Link>
                     </li>
                   </ul>
@@ -212,7 +220,8 @@ export default function Navbar() {
                     <span>&nbsp;Search</span>
                   </Link>
                 </li>
-                {Object.keys(userDataOAuth).length !== 0 ? (
+                {Object.keys(userOAuthData).length > 0 ||
+                Object.keys(userLoginData).length > 0 ? (
                   <>
                     <li className="nav-item">
                       <Link className={`nav-link ${style.navLinks}`}>
@@ -222,12 +231,34 @@ export default function Navbar() {
                         </span>
                       </Link>
                     </li>
-                    <li className="nav-item user">
-                      <Link className={`nav-link ${style.navLinks}`}>
-                        <img src={userDataOAuth.image} alt="" />
-                        <span>&nbsp;{userDataOAuth.name}</span>
-                      </Link>
-                    </li>
+                    {userOAuthData.email && (
+                      <li className="nav-item user">
+                        <Link className={`nav-link ${style.navLinks}`}>
+                          <img
+                            src={
+                              userOAuthData.image ||
+                              "https://i.ibb.co/1KwfzCK/Noavatar.jpg"
+                            }
+                            alt=""
+                          />
+                          <span>&nbsp;{userOAuthData.name}</span>
+                        </Link>
+                      </li>
+                    )}
+                    {userLoginData.email && (
+                      <li className="nav-item user">
+                        <Link className={`nav-link ${style.navLinks}`}>
+                          <img
+                            src={
+                              userLoginData.image ||
+                              "https://i.ibb.co/1KwfzCK/Noavatar.jpg"
+                            }
+                            alt=""
+                          />
+                          <span>&nbsp;{userLoginData.email}</span>
+                        </Link>
+                      </li>
+                    )}
                     <span>&nbsp;&nbsp;</span>
                     <li className={`nav-item ${style.cartWrapper}`}>
                       <Link className={`nav-link ${style.navLinks}`} to="/cart">
@@ -235,6 +266,16 @@ export default function Navbar() {
                         <span>&nbsp;Cart</span>
                       </Link>
                     </li>
+                    {userLoginData.isAdmin === "admin" && (
+                      <li className={`nav-item ${style.cartWrapper}`}>
+                        <Link
+                          className={`nav-link ${style.navLinks}`}
+                          to="/layout/adminhome"
+                        >                          
+                          <span>Admin</span>
+                        </Link>
+                      </li>
+                    )}
                   </>
                 ) : (
                   <span></span>

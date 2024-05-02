@@ -1,0 +1,51 @@
+@import "../../sass/responsive.scss";
+
+
+.container{
+  height: 100vh;  
+}
+.cartImage {
+  width: 34px;
+}
+.orderSummaryWrapper {
+  width: 90%;
+}
+.orderSummary {
+  display: flex;
+  align-items: center;
+}
+.orderSummary div {
+  font-size: 30px;
+  font-weight: 500;
+}
+.formRow {
+  display: flex;
+  flex-wrap: wrap;
+}
+h1,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+.cartDetailsWrapper {
+  .cardDetail {
+    @include lg {
+      flex-direction: column;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+  @include lg {
+    flex-direction: column;    
+  }
+  div {
+    div {
+      button {
+        border: none;
+      }
+    }
+  }
+  .charges {
+    font-size: 15px;
+  }
+}

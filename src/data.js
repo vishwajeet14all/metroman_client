@@ -1,44 +1,3 @@
-export const columns = [
-  { field: "id", headerName: "ID", width: 90 },
-  {
-    field: "img",
-    headerName: "Avatar",
-    width: 100,
-    renderCell: (params) => {
-      return (
-        <img
-          src={params.row.img || "https://i.ibb.co/1KwfzCK/Noavatar.jpg"}
-          alt=""
-        />
-      );
-    },
-  },
-  {
-    field: "name",
-    type: "string",
-    headerName: "Name",
-    width: 150,
-  },
-  {
-    field: "email",
-    type: "string",
-    headerName: "Email",
-    width: 250,
-  },
-  {
-    field: "createdAt",
-    type: "string",
-    headerName: "Created At",
-    width: 200,
-  },
-  {
-    field: "mobilenumber",
-    headerName: "Phone",
-    type: "string",
-    width: 200,
-  },
-];
-
 export const menu = [
   {
     id: 1,
@@ -53,7 +12,7 @@ export const menu = [
       {
         id: 2,
         title: "Profile",
-        url: "/users/1",
+        url: "/#",
         icon: "bi bi-person",
       },
     ],
@@ -71,89 +30,89 @@ export const menu = [
       {
         id: 2,
         title: "Products",
-        url: "/layout/adminproducts",
+        url: "/layout/getallproducts",
         icon: "bi bi-cart2",
       },
       {
         id: 3,
         title: "Orders",
-        url: "/orders",
+        url: "/layout/orders",
         icon: "bi bi-card-checklist",
       },
       {
         id: 4,
         title: "Posts",
-        url: "/posts",
+        url: "/#",
         icon: "bi bi-postcard",
       },
     ],
   },
-  {
-    id: 3,
-    title: "general",
-    listItems: [
-      {
-        id: 1,
-        title: "Elements",
-        url: "/",
-        icon: "bi bi-ui-checks-grid",
-      },
-      {
-        id: 2,
-        title: "Notes",
-        url: "/",
-        icon: "bi bi-pencil-square",
-      },
-      {
-        id: 3,
-        title: "Forms",
-        url: "/",
-        icon: "bi bi-card-text",
-      },
-      {
-        id: 4,
-        title: "Calendar",
-        url: "/",
-        icon: "bi bi-calendar-week",
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "Maintenance",
-    listItems: [
-      {
-        id: 1,
-        title: "Settings",
-        url: "/",
-        icon: "bi bi-gear",
-      },
-      {
-        id: 2,
-        title: "Backups",
-        url: "/",
-        icon: "bi bi-inboxes-fill",
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "analytics",
-    listItems: [
-      {
-        id: 1,
-        title: "Charts",
-        url: "/",
-        icon: "bi bi-graph-up-arrow",
-      },
-      {
-        id: 2,
-        title: "Logs",
-        url: "/",
-        icon: "bi bi-journal-text",
-      },
-    ],
-  },
+  // {
+  //   id: 3,
+  //   title: "general",
+  //   listItems: [
+  //     {
+  //       id: 1,
+  //       title: "Elements",
+  //       url: "/#",
+  //       icon: "bi bi-ui-checks-grid",
+  //     },
+  //     {
+  //       id: 2,
+  //       title: "Notes",
+  //       url: "/#",
+  //       icon: "bi bi-pencil-square",
+  //     },
+  //     {
+  //       id: 3,
+  //       title: "Forms",
+  //       url: "/#",
+  //       icon: "bi bi-card-text",
+  //     },
+  //     {
+  //       id: 4,
+  //       title: "Calendar",
+  //       url: "/#",
+  //       icon: "bi bi-calendar-week",
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 4,
+  //   title: "Maintenance",
+  //   listItems: [
+  //     {
+  //       id: 1,
+  //       title: "Settings",
+  //       url: "/#",
+  //       icon: "bi bi-gear",
+  //     },
+  //     {
+  //       id: 2,
+  //       title: "Backups",
+  //       url: "/#",
+  //       icon: "bi bi-inboxes-fill",
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 5,
+  //   title: "analytics",
+  //   listItems: [
+  //     {
+  //       id: 1,
+  //       title: "Charts",
+  //       url: "/#",
+  //       icon: "bi bi-graph-up-arrow",
+  //     },
+  //     {
+  //       id: 2,
+  //       title: "Logs",
+  //       url: "/#",
+  //       icon: "bi bi-journal-text",
+  //     },
+  //   ],
+  // },
 ];
 
 export const topDealUsers = [

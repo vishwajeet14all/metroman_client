@@ -1,7 +1,6 @@
-import React from "react";
-import SingleBanner from "../../components/SingleBanner";
+import SingleBanner from "../../components/singleBanner/SingleBanner";
 import style from "./PrivacyPolicy.module.css";
-import Copywrite from "../../components/Copywrite";
+import Copywrite from "../../components/copyWrite/Copywrite";
 
 export default function PrivacyPolicy() {
   return (

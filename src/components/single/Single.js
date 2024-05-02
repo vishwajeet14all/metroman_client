@@ -1,4 +1,3 @@
-import React from "react";
 import "./single.scss";
 import {
   Legend,
@@ -9,6 +8,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { Link } from "react-router-dom";
 
 export default function Single(props) {
   return (
@@ -23,8 +23,10 @@ export default function Single(props) {
               />
             )}
             <h1>{props.name}</h1>
-            <button>Update</button>
-          </div>    
+            <Link to={`/layout/${props.slug}/${props.id}}`}>
+              <button>Update</button>
+            </Link>
+          </div>
           <div className="details">
             <div className="item">
               <div className="itemWrapper">

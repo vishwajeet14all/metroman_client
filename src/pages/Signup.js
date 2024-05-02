@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { signUp } from "../services/api";
 import { useNavigate } from "react-router-dom";
+import { useSignUpMutation } from "../redux/api/userApi";
+import { loginWithGoogle } from "../services/api";
+// import { signUp } from "../services/api";
 
-const URL = process.env.REACT_APP_API_URL;
 
 export default function Signup() {
+
   const navigate = useNavigate();
+  //Destructure of array [signUp]
+  const [signUp] = useSignUpMutation();
 
   const [formData, setFormData] = useState({
     mobilenumber: "",
@@ -26,9 +30,24 @@ export default function Signup() {
     }));
   };
 
-  const loginWithGoogle = () => {
-    window.open(`${URL}/auth/google/callback`, "_self");
-  };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (
+  //     formData.password === formData.confirmPassword &&
+  //     formData.acceptTerms
+  //   ) {
+  //     const signUpSuccess = await signUp(formData);
+  //     // console.log("signUpSuccess ",signUpSuccess);
+  //     if (signUpSuccess) {
+  //       alert("Sign up Successful");
+  //       navigate("/login");
+  //     } else {
+  //       alert("Sign up failed. Please try again.");
+  //     }
+  //   } else {
+  //     alert("Passwords do not match or terms are not accepted");
+  //   }
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,11 +57,12 @@ export default function Signup() {
     ) {
       const signUpSuccess = await signUp(formData);
       // console.log("signUpSuccess ",signUpSuccess);
-      if (signUpSuccess) {
-        alert("Sign up Successful");
+      if ("data" in signUpSuccess) {
+        alert(signUpSuccess.data.message);
         navigate("/login");
       } else {
-        alert("Sign up failed. Please try again.");
+        const error = signUpSuccess.error.data.message;
+        alert(error);
       }
     } else {
       alert("Passwords do not match or terms are not accepted");

@@ -1,4 +1,3 @@
-import React from "react";
 import style from "./Contactus.module.css";
 
 export default function Contactus() {

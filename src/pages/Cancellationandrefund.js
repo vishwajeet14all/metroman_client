@@ -1,7 +1,18 @@
-import React from 'react'
+import StatusTable from "../components/statusTable.js/StatusTable";
+
+
+
+
+
+
+
+
 
 export default function Cancellationandrefund() {
+  
   return (
-    <div>Cancellationandrefund</div>
+    <section className="container">
+      <StatusTable/>
+    </section>
   )
 }

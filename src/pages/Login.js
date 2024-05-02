@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { login } from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { loginWithGoogle } from "../services/api";
+import { useDispatch } from "react-redux";
+import { setLoginData, unsetLoginData } from "../redux/slices/auth/authSlice";
+import { useLoginMutation } from "../redux/api/userApi";
+// import { login } from "../services/api";
+
+
 
 export default function Login() {
+
+  const [login] = useLoginMutation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
 
   const [formData, setFormData] = useState({
     email: "",
@@ -25,12 +34,17 @@ export default function Login() {
     e.preventDefault();
     try {
       const loginSuccess = await login(formData);
-      console.log("loginSuccess ",loginSuccess);
-      if (loginSuccess) {
-        alert("Login Successfull");
+      // console.log("loginSuccess ",loginSuccess);      
+      if ("data" in loginSuccess) {
+        dispatch(setLoginData(loginSuccess.data.userData))
+        alert(loginSuccess.data.message);
         navigate("/personaldetail");
+        localStorage.setItem('token', loginSuccess.data.token)
+      }else {
+        dispatch(unsetLoginData()) 
+        localStorage.removeItem('token');        
+        navigate("/login");
       }
-      localStorage.setItem('token', loginSuccess.data.token)
     } catch (error) {
       console.error("Login failed ", error);
     }

@@ -1,4 +1,3 @@
-import React from "react";
 import "./adminHome.scss";
 import TopBox from "../../../components/topBox/TopBox";
 import ChartBox from "../../../components/chartBox/ChartBox";
@@ -32,9 +31,11 @@ export default function Adminhome() {
       <div className="box box5">
         <ChartBox {...chartBoxRevenue} />
       </div>
+      {/* //todo have to change in transactions*/}
       <div className="box box6">
         <ChartBox {...chartBoxConversion} />
       </div>
+      {/* //todo have to change in transactions*/}
       <div className="box box7">
         <BigChartBox />
       </div>

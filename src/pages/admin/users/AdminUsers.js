@@ -1,9 +1,49 @@
 import React, { useEffect, useState } from "react";
 import DataTable from "../../../components/dataTable/DataTable";
 import "./users.scss";
-import Add from "../../../components/add/Add";
 import { deleteUser, getAllUsers } from "../../../services/api";
-import { columns } from "../../../data";
+// import Addproduct from "../../../components/add/Addproduct";
+
+const columns = [
+  { field: "id", headerName: "ID", width: 90 },
+  {
+    field: "img",
+    headerName: "Avatar",
+    width: 100,
+    renderCell: (params) => {
+      return (
+        <img
+          src={params.row.img || "https://i.ibb.co/1KwfzCK/Noavatar.jpg"}
+          alt=""
+        />
+      );
+    },
+  },
+  {
+    field: "name",
+    type: "string",
+    headerName: "Name",
+    width: 150,
+  },
+  {
+    field: "email",
+    type: "string",
+    headerName: "Email",
+    width: 250,
+  },
+  {
+    field: "createdAt",
+    type: "string",
+    headerName: "Created At",
+    width: 200,
+  },
+  {
+    field: "mobilenumber",
+    headerName: "Phone",
+    type: "string",
+    width: 200,
+  },
+];
 
 
 export default function AdminUsers() {
@@ -62,20 +102,20 @@ export default function AdminUsers() {
     }
   };
 
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   return (
     <div className="users">
       <div className="info">
         <h1>Users</h1>
-        <button onClick={() => setOpen(true)}>Add New User</button>
+        {/* <button onClick={() => setOpen(true)}>Add New User</button> */}
       </div>
       <DataTable
-        slug=""
+        slug="userdetails"
         columns={columns}
         handleDelete={handleDelete}
         rows={users}
       />
-      {open && <Add slug="user" columns={columns} setOpen={setOpen} />}
+      {/* {open && <Addproduct slug="user" columns={columns} setOpen={setOpen} />} */}
     </div>
   );
 }
