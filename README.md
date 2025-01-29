@@ -1,7 +1,4 @@
-
-*  Tested and verified in dev.
-*  **Not fixed**.
-*  screenshot :
+<img width="645" alt="Untitled" src="https://github.com/user-attachments/assets/9ad3b857-42c8-4f91-8397-8d051edf93d9" />
 
 
 
