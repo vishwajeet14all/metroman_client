@@ -1,9 +1,7 @@
 
-Tested and verified in dev.
-
-**Not fixed**.
-
-screenshot :
+-Tested and verified in dev.
+-**Not fixed**.
+-screenshot :
 
 
 
