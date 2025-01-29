@@ -1,7 +1,7 @@
 > [!NOTE]
->Tested and verified in dev.
->**Not fixed**.
->screenshot :
+[^1]:>Tested and verified in dev.
+[^2]:>**Not fixed**.
+[^3]:>screenshot :
 
 
 
