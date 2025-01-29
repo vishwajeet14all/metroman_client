@@ -1,6 +1,6 @@
 > [!NOTE]
->Tested and verified in dev
->**Not fixed**
+>Tested and verified in dev.
+>**Not fixed**.
 >screenshot :
 
 
